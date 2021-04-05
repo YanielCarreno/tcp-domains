@@ -2,7 +2,11 @@
 (:domain oil-rig)
 (:objects
     husky0 - robot
-    wpGF-0 wpGF-1 wpGF-2 wpGF-3 wpGF-4 wpGF-5 wpGF-6 wpGF-7 wpGF-8 wpGF-9 wpGF-10 wpGF-11 wpGF-12 wpGF-13 wpGF-14 wpGF-15 - waypoint
+    wpGF-0 wpGF-1 wpGF-2 wpGF-3 wpGF-4 wpGF-5 wpGF-6 wpGF-7 wpGF-8 wpGF-9 wpGF-10 wpGF-11 wpGF-12 wpGF-13 wpGF-14 wpGF-15
+    wpT1F1-1 wpT1F1-2 wpT1F1-3 wpT1F1-4 wpT1F1-5
+    wpT1F2-1 wpT1F2-2 wpT1F2-3 wpT1F2-4 wpT1F2-5
+    wpT1F3-1 wpT1F3-2 wpT1F3-3 wpT1F3-4 wpT1F3-5 - waypoint
+
 
     pathGF-0-GF-0 pathGF-1-GF-1 pathGF-2-GF-2 pathGF-3-GF-3 pathGF-4-GF-4 pathGF-5-GF-5 pathGF-6-GF-6 pathGF-7-GF-7 pathGF-8-GF-8 pathGF-9-GF-9
     pathGF-10-GF-10 pathGF-11-GF-11 pathGF-12-GF-12 pathGF-13-GF-13 pathGF-14-GF-14 pathGF-15-GF-15
@@ -21,7 +25,12 @@
     pathGF-12-GF-13
     pathGF-13-GF-14
     pathGF-14-GF-13 pathGF-14-GF-15
-    pathGF-15-GF-2 pathGF-15-GF-4 - poi
+    pathGF-15-GF-2 pathGF-15-GF-4
+    pathGF-2-T1F1-1
+    pathT1F1-1-GF-2 pathT1F1-1-T1F1-2 pathT1F1-2-T1F1-1 pathT1F1-2-T1F1-3 pathT1F1-3-T1F1-2 pathT1F1-3-T1F1-4 pathT1F1-4-T1F1-3 pathT1F1-4-T1F1-5
+    pathT1F1-5-T1F1-4 pathT1F1-5-T1F2-1 pathT1F2-1-T1F1-5 pathT1F2-1-T1F2-2 pathT1F2-2-T1F2-1 pathT1F2-2-T1F2-3 pathT1F2-3-T1F2-2 pathT1F2-3-T1F2-4
+    pathT1F2-4-T1F2-3 pathT1F2-4-T1F2-5 pathT1F2-5-T1F2-4 pathT1F2-5-T1F3-1 pathT1F3-1-T1F2-5 pathT1F3-1-T1F3-2 pathT1F3-2-T1F3-1 pathT1F3-2-T1F3-3
+    pathT1F3-3-T1F3-2 pathT1F3-3-T1F3-4 pathT1F3-4-T1F3-3 pathT1F3-4-T1F3-5 pathT1F3-5-T1F3-4 - poi
 
     camera0 - robot_sensor
     arm0 - robot_actuator
@@ -54,6 +63,8 @@
     (path_option wpGF-14 wpGF-14 pathGF-14-GF-14)
     (path_option wpGF-15 wpGF-15 pathGF-15-GF-15)
 
+
+    (path_option wpGF-2 wpT1F1-1 pathGF-2-T1F1-1)
     (path_option wpGF-0 wpGF-1 pathGF-0-GF-1)
     (path_option wpGF-1 wpGF-0 pathGF-1-GF-0)
     (path_option wpGF-1 wpGF-2 pathGF-1-GF-2)
@@ -77,6 +88,78 @@
     (path_option wpGF-15 wpGF-2 pathGF-15-GF-2)
     (path_option wpGF-15 wpGF-4 pathGF-15-GF-4)
 
+
+    ; tower-1 floor-1
+
+    (path_option wpT1F1-1 wpGF-2 pathT1F1-1-GF-2)
+    (path_option wpT1F1-1 wpT1F1-2 pathT1F1-1-T1F1-2)
+    (path_option wpT1F1-2 wpT1F1-1 pathT1F1-2-T1F1-1)
+    (path_option wpT1F1-2 wpT1F1-3 pathT1F1-2-T1F1-3)
+    (path_option wpT1F1-3 wpT1F1-2 pathT1F1-3-T1F1-2)
+    (path_option wpT1F1-3 wpT1F1-4 pathT1F1-3-T1F1-4)
+    (path_option wpT1F1-4 wpT1F1-3 pathT1F1-4-T1F1-3)
+    (path_option wpT1F1-4 wpT1F1-5 pathT1F1-4-T1F1-5)
+    (path_option wpT1F1-5 wpT1F1-4 pathT1F1-5-T1F1-4)
+    (path_option wpT1F1-5 wpT1F2-1 pathT1F1-5-T1F2-1)
+
+    ; tower-1 floor-2
+
+    (path_option wpT1F2-1 wpT1F1-5 pathT1F2-1-T1F1-5)
+    (path_option wpT1F2-1 wpT1F2-2 pathT1F2-1-T1F2-2)
+    (path_option wpT1F2-2 wpT1F2-1 pathT1F2-2-T1F2-1)
+    (path_option wpT1F2-2 wpT1F2-3 pathT1F2-2-T1F2-3)
+    (path_option wpT1F2-3 wpT1F2-2 pathT1F2-3-T1F2-2)
+    (path_option wpT1F2-3 wpT1F2-4 pathT1F2-3-T1F2-4)
+    (path_option wpT1F2-4 wpT1F2-3 pathT1F2-4-T1F2-3)
+    (path_option wpT1F2-4 wpT1F2-5 pathT1F2-4-T1F2-5)
+    (path_option wpT1F2-5 wpT1F2-4 pathT1F2-5-T1F2-4)
+    (path_option wpT1F2-5 wpT1F3-1 pathT1F2-5-T1F3-1)
+
+    ; tower-1 floor-3
+
+    (path_option wpT1F3-1 wpT1F2-5 pathT1F3-1-T1F2-5)
+    (path_option wpT1F3-1 wpT1F3-2 pathT1F3-1-T1F3-2)
+    (path_option wpT1F3-2 wpT1F3-1 pathT1F3-2-T1F3-1)
+    (path_option wpT1F3-2 wpT1F3-3 pathT1F3-2-T1F3-3)
+    (path_option wpT1F3-3 wpT1F3-2 pathT1F3-3-T1F3-2)
+    (path_option wpT1F3-3 wpT1F3-4 pathT1F3-3-T1F3-4)
+    (path_option wpT1F3-4 wpT1F3-3 pathT1F3-4-T1F3-3)
+    (path_option wpT1F3-4 wpT1F3-5 pathT1F3-4-T1F3-5)
+    (path_option wpT1F3-5 wpT1F3-4 pathT1F3-5-T1F3-4)
+
+
+
+    (path_free wpGF-2 pathGF-2-T1F1-1)
+
+    (path_free wpT1F1-1 pathT1F1-1-GF-2)
+    (path_free wpT1F1-1 pathT1F1-1-T1F1-2)
+    (path_free wpT1F1-2 pathT1F1-2-T1F1-1)
+    (path_free wpT1F1-2 pathT1F1-2-T1F1-3)
+    (path_free wpT1F1-3 pathT1F1-3-T1F1-2)
+    (path_free wpT1F1-3 pathT1F1-3-T1F1-4)
+    (path_free wpT1F1-4 pathT1F1-4-T1F1-3)
+    (path_free wpT1F1-4 pathT1F1-4-T1F1-5)
+    (path_free wpT1F1-5 pathT1F1-5-T1F1-4)
+    (path_free wpT1F1-5 pathT1F1-5-T1F2-1)
+    (path_free wpT1F2-1 pathT1F2-1-T1F1-5)
+    (path_free wpT1F2-1 pathT1F2-1-T1F2-2)
+    (path_free wpT1F2-2 pathT1F2-2-T1F2-1)
+    (path_free wpT1F2-2 pathT1F2-2-T1F2-3)
+    (path_free wpT1F2-3 pathT1F2-3-T1F2-2)
+    (path_free wpT1F2-3 pathT1F2-3-T1F2-4)
+    (path_free wpT1F2-4 pathT1F2-4-T1F2-3)
+    (path_free wpT1F2-4 pathT1F2-4-T1F2-5)
+    (path_free wpT1F2-5 pathT1F2-5-T1F2-4)
+    (path_free wpT1F2-5 pathT1F2-5-T1F3-1)
+    (path_free wpT1F3-1 pathT1F3-1-T1F2-5)
+    (path_free wpT1F3-1 pathT1F3-1-T1F3-2)
+    (path_free wpT1F3-2 pathT1F3-2-T1F3-1)
+    (path_free wpT1F3-2 pathT1F3-2-T1F3-3)
+    (path_free wpT1F3-3 pathT1F3-3-T1F3-2)
+    (path_free wpT1F3-3 pathT1F3-3-T1F3-4)
+    (path_free wpT1F3-4 pathT1F3-4-T1F3-3)
+    (path_free wpT1F3-4 pathT1F3-4-T1F3-5)
+    (path_free wpT1F3-5 pathT1F3-5-T1F3-4)
 
 
     (path_free wpGF-0 pathGF-0-GF-0)
@@ -110,8 +193,10 @@
     (path_free wpGF-0 pathGF-0-GF-1)
 
 
+
     ; distance between all points
 
+    (= (distance_path wpGF-2 wpT1F1-1 pathGF-2-T1F1-1) 3)
     (= (distance_path wpGF-0 wpGF-1 pathGF-0-GF-1) 1)
     (= (distance_path wpGF-1 wpGF-0 pathGF-1-GF-0) 1)
     (= (distance_path wpGF-1 wpGF-2 pathGF-1-GF-2) 2)
@@ -137,6 +222,37 @@
 
 
 
+    (= (distance_path wpT1F1-1 wpGF-2 pathT1F1-1-GF-2) 3)
+    (= (distance_path wpT1F1-1 wpT1F1-2 pathT1F1-1-T1F1-2) 2)
+    (= (distance_path wpT1F1-2 wpT1F1-1 pathT1F1-2-T1F1-1) 2)
+    (= (distance_path wpT1F1-2 wpT1F1-3 pathT1F1-2-T1F1-3) 3)
+    (= (distance_path wpT1F1-3 wpT1F1-2 pathT1F1-3-T1F1-2) 3)
+    (= (distance_path wpT1F1-3 wpT1F1-4 pathT1F1-3-T1F1-4) 1)
+    (= (distance_path wpT1F1-4 wpT1F1-3 pathT1F1-4-T1F1-3) 1)
+    (= (distance_path wpT1F1-4 wpT1F1-5 pathT1F1-4-T1F1-5) 1)
+    (= (distance_path wpT1F1-5 wpT1F1-4 pathT1F1-5-T1F1-4) 1)
+    (= (distance_path wpT1F1-5 wpT1F2-1 pathT1F1-5-T1F2-1) 3)
+    (= (distance_path wpT1F2-1 wpT1F1-5 pathT1F2-1-T1F1-5) 3)
+    (= (distance_path wpT1F2-1 wpT1F2-2 pathT1F2-1-T1F2-2) 2)
+    (= (distance_path wpT1F2-2 wpT1F2-1 pathT1F2-2-T1F2-1) 2)
+    (= (distance_path wpT1F2-2 wpT1F2-3 pathT1F2-2-T1F2-3) 3)
+    (= (distance_path wpT1F2-3 wpT1F2-2 pathT1F2-3-T1F2-2) 3)
+    (= (distance_path wpT1F2-3 wpT1F2-4 pathT1F2-3-T1F2-4) 1)
+    (= (distance_path wpT1F2-4 wpT1F2-3 pathT1F2-4-T1F2-3) 1)
+    (= (distance_path wpT1F2-4 wpT1F2-5 pathT1F2-4-T1F2-5) 1)
+    (= (distance_path wpT1F2-5 wpT1F2-4 pathT1F2-5-T1F2-4) 1)
+    (= (distance_path wpT1F2-5 wpT1F3-1 pathT1F2-5-T1F3-1) 3)
+    (= (distance_path wpT1F3-1 wpT1F2-5 pathT1F3-1-T1F2-5) 3)
+    (= (distance_path wpT1F3-1 wpT1F3-2 pathT1F3-1-T1F3-2) 2)
+    (= (distance_path wpT1F3-2 wpT1F3-1 pathT1F3-2-T1F3-1) 2)
+    (= (distance_path wpT1F3-2 wpT1F3-3 pathT1F3-2-T1F3-3) 3)
+    (= (distance_path wpT1F3-3 wpT1F3-2 pathT1F3-3-T1F3-2) 3)
+    (= (distance_path wpT1F3-3 wpT1F3-4 pathT1F3-3-T1F3-4) 1)
+    (= (distance_path wpT1F3-4 wpT1F3-3 pathT1F3-4-T1F3-3) 1)
+    (= (distance_path wpT1F3-4 wpT1F3-5 pathT1F3-4-T1F3-5) 1)
+    (= (distance_path wpT1F3-5 wpT1F3-4 pathT1F3-5-T1F3-4) 1)
+
+
     (= (consumption husky0) 0.01)
 
     (= (speed husky0) 0.5)
@@ -145,7 +261,6 @@
 
 
 )
-
 
 (:unknown-prop
 
@@ -180,11 +295,13 @@
 
 (:goal (and
 
-   (motor_inspected husky0 wpGF-5)
-   (area_inspected husky0 wpGF-6)
-   (motor_inspected husky0 wpGF-14)
-   (motor_inspected husky0 wpGF-15)
-   (motor_inspection_communicated husky0 wpGF-5)
+    (motor_inspected husky0 wpGF-2)
+    (motor_inspected husky0 wpGF-14)
+
+    (motor_inspection_communicated husky0 wpT1F1-2)
+    (motor_inspection_communicated husky0 wpT1F2-5)
+    (motor_inspection_communicated husky0 wpGF-13)
+    (motor_inspection_communicated husky0 wpGF-10)
 
 ))
 (:metric minimize (total-time))

@@ -13,7 +13,6 @@
 
             (path_option ?wpi  ?wpf - waypoint ?p - poi)
             (path_free ?wpi - waypoint ?p - poi)
-            (is_path ?p - poi)
 
             ; predicates related with general domain description
 
@@ -24,6 +23,7 @@
              (recovered ?r - robot ?wp - waypoint)
              (turned ?r - robot ?wp - waypoint ?p - poi)
              (motor_inspected ?r - robot ?wp - waypoint)
+             (area_inspected ?r - robot ?wp - waypoint)
              (camera_equipped ?r - robot ?s - robot_sensor)
              (motor_inspection_communicated ?r - robot ?wp - waypoint)
 )
@@ -42,7 +42,6 @@
              (over all (at ?r ?wpi))
              (over all (turned ?r ?wpi ?p))
              (over all (camera_equipped ?r ?s))
-             (over all (is_path ?p))
              (at start (available ?r))
              )
   :effect (and
@@ -52,12 +51,11 @@
           )
 )
 
-(:durative-action turn-to-path
+(:durative-action locCam
 :parameters (?r - robot ?wp - waypoint ?p - poi)
 :duration ( = ?duration 10)
 :condition (and
            (over all (at ?r ?wp))
-           (over all (is_path ?p))
            (at start (available ?r))
            )
 :effect (and
@@ -73,7 +71,6 @@
 :condition (and
            (over all (path_option ?wpi  ?wpf ?p))
            (over all (path_free ?wpi ?p))
-           (over all (is_path ?p))
            (at start (available ?r))
            (at start (at ?r ?wpi))
            )
@@ -113,6 +110,20 @@
         (at start (not (available ?r)))
         (at end (available ?r))
         (at end (motor_inspection_communicated ?r ?wp))
+        )
+)
+
+(:durative-action inspect-area
+:parameters (?r - robot ?wp - waypoint)
+:duration ( = ?duration 15)
+:condition (and
+           (over all (at ?r ?wp))
+           (at start (available ?r))
+           )
+:effect (and
+        (at start (not (available ?r)))
+        (at end (available ?r))
+        (at end (area_inspected ?r ?wp))
         )
 )
 
