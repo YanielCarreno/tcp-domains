@@ -52,8 +52,7 @@
     pathT4F2-4-T4F2-3 pathT4F2-4-T4F2-5 pathT4F2-5-T4F2-4 pathT4F2-5-T4F3-1 pathT4F3-1-T4F2-5 pathT4F3-1-T4F3-2 pathT4F3-2-T4F3-1 pathT4F3-2-T4F3-3
     pathT4F3-3-T4F3-2 pathT4F3-3-T4F3-4 pathT4F3-4-T4F3-3 pathT4F3-4-T4F3-5 pathT4F3-5-T4F3-4 - poi
 
-    camera0 - robot_sensor
-    arm0 - robot_actuator
+    camera0 - robot-sensor
 )
 (:init
     (at husky0 wpGF-0)

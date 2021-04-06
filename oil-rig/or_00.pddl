@@ -23,8 +23,7 @@
     pathGF-14-GF-13 pathGF-14-GF-15
     pathGF-15-GF-2 pathGF-15-GF-4 - poi
 
-    camera0 - robot_sensor
-    arm0 - robot_actuator
+    camera0 - robot-sensor
 )
 (:init
     (at husky0 wpGF-0)

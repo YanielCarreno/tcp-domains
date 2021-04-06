@@ -3,8 +3,7 @@
 (:types
   robot
   waypoint
-  robot_sensor
-  robot_actuator
+  robot-sensor
   poi
 )
 
@@ -24,7 +23,7 @@
              (turned ?r - robot ?wp - waypoint ?p - poi)
              (motor_inspected ?r - robot ?wp - waypoint)
              (area_inspected ?r - robot ?wp - waypoint)
-             (camera_equipped ?r - robot ?s - robot_sensor)
+             (camera_equipped ?r - robot ?s - robot-sensor)
              (motor_inspection_communicated ?r - robot ?wp - waypoint)
 )
 
@@ -36,7 +35,7 @@
 )
 
 (:durative-action sense-path
- :parameters (?r - robot ?s - robot_sensor ?wpi - waypoint ?p - poi)
+ :parameters (?r - robot ?s - robot-sensor ?wpi - waypoint ?p - poi)
  :duration ( = ?duration 5)
  :condition (and
              (over all (at ?r ?wpi))
