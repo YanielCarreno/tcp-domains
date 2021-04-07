@@ -1,10 +1,10 @@
-optic-coeffect-domains
+OPTIC-CoEffects Domains:
 
 DOMAIN DESCRIPTIONS:
 
   OIL-RIG
 
-  <p align="center"> <img src="/figures/oil-rig.png" align="center" width="600" height="250"> </p>
+  <p align="center"> <img src="/figures/oil-rig.png" align="center" width="600" height="300"> </p>
 
   MANUFACTURING-PLANT
 
