@@ -13,8 +13,8 @@
 81.607:          (navigate-in-neighbourhood postman0 house1loc0 house1loc1)  [0.200]
 81.807:          (deliver postman0 house1loc0 house1loc1)                   [20.000]
              <BRANCH, 2, false, (door-closed house1loc0)>
-61.606:          (navigate-in-neighbourhood postman0 house1loc0 house1loc1)   [0.200]
-81.807:          (deliver postman0 house1loc0 house1loc1)                    [20.000]
+61.606:          (navigate-in-neighbourhood postman0 house1loc0 house1loc1)  [0.200]
+81.807:          (deliver postman0 house1loc0 house1loc1)                   [20.000]
          <BRANCH, 1, false,(door-closed house0loc0)>
 11.002:      (navigate-in-neighbourhood postman0 house0loc0 house0loc1)      [0.200]
 11.203:      (deliver postman0 house0loc0 house0loc1)                       [20.000]
