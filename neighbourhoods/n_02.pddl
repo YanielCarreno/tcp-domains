@@ -277,7 +277,7 @@
 
 (:unknown-prop
 
-   (house0loc0 (door-closed house0loc0))
+   (house0loc0 (door-closed house0loc0) )
    (house1loc0 (door-closed house1loc0) )
    (house2loc0 (door-closed house2loc0) )
    (house3loc0 (door-closed house3loc0) )
