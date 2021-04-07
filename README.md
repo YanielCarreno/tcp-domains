@@ -12,8 +12,8 @@ DOMAIN DESCRIPTIONS:
 
   VALVE-MANIPULATION
 
-  <p align="center"> <img src="/figures/vm.png" align="center" width="600" height="230"> </p>
+  <p align="center"> <img src="/figures/vm.png" align="center" width="450" height="230"> </p>
 
   NEIGHBOURHOODS
 
-  <p align="center"> <img src="/figures/n.png" align="center" width="600" height="230"> </p>
+  <p align="center"> <img src="/figures/n.png" align="center" width="700" height="230"> </p>
