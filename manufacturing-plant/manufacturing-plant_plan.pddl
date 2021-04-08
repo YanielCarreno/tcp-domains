@@ -26,7 +26,7 @@
 246.816:                  (navigation husky0 wp12 wp15)                    [143.178]
 389.995:                  (navigation husky0 wp15 wp0)                      [76.446]
 466.442:                  (recover husky0 wp0)                               [1.000]
-                     <BRANCH, 4, true, (flow_val valve1 f4)>
+                     <BRANCH, 4, false, (flow_val valve1 f4)>
 231.815:                  (navigation husky0 wp12 wp15)                    [143.178]
 374.994:                  (navigation husky0 wp15 wp0)                      [76.446]
 451.442:                  (recover husky0 wp0)                               [1.000]
