@@ -1,4 +1,4 @@
-tcp (temporally-contingent planning) domains:
+#tcp (temporally-contingent planning) domains:
 
 We define planning domains motivated by real-world problems, particularly robotics applications. Models involve temporal and numeric reasoning and the ability to manage incomplete knowledge and perceptual information.
 
