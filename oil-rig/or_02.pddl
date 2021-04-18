@@ -38,7 +38,7 @@
     pathT2F2-4-T2F2-3 pathT2F2-4-T2F2-5 pathT2F2-5-T2F2-4 pathT2F2-5-T2F3-1 pathT2F3-1-T2F2-5 pathT2F3-1-T2F3-2 pathT2F3-2-T2F3-1 pathT2F3-2-T2F3-3
     pathT2F3-3-T2F3-2 pathT2F3-3-T2F3-4 pathT2F3-4-T2F3-3 pathT2F3-4-T2F3-5 pathT2F3-5-T2F3-4 - poi
 
-    camera0 - robot-sensor
+    camera0 - robot_sensor
 )
 (:init
     (at husky0 wpGF-0)
@@ -360,7 +360,7 @@
 
     (= (speed husky0) 0.5)
 
-    (= (total-distance) 0)
+    (= (total_distance) 0)
 
 
 )

@@ -18,8 +18,8 @@
      (parcel_delivered ?r - robot ?y - poi)
      (door_loc ?y - poi)
 
-     (door-closed ?y - poi)
-     (door-open ?y - poi)
+     (door_closed ?y - poi)
+     (door_open ?y - poi)
 
      (is_house_connection ?y ?z - poi)
      (is_postoffice_connection ?y ?z - poi)
@@ -73,7 +73,7 @@
                )
     :effect (and (at start (not (available ?r)))
             (at end (available ?r))
-            (at end (K+ (door-closed ?y)))
+            (at end (K+ (door_closed ?y)))
             )
 )
 
@@ -84,12 +84,12 @@
                (over all (at ?r ?y))
                (over all (door_loc ?y))
                (at start (available ?r))
-               (at start (door-closed ?y))
+               (at start (door_closed ?y))
                )
     :effect (and
             (at start (not (available ?r)))
-            (at end (door-open ?y))
-            (at end (not (door-closed ?y)))
+            (at end (door_open ?y))
+            (at end (not (door_closed ?y)))
             (at end (available ?r))
             )
 )
@@ -102,7 +102,7 @@
                (over all (connected ?y ?z))
                (over all (door_loc ?y))
                (at start (available ?r))
-               (at start (door-open ?y))
+               (at start (door_open ?y))
                )
     :effect (and
             (at start (not (available ?r)))

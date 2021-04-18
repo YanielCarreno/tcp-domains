@@ -3,8 +3,8 @@
 (:types
   robot
   waypoint
-  robot-sensor
-  robot-actuator
+  robot_sensor
+  robot_actuator
   valve
   poi
 )
@@ -13,8 +13,8 @@
 
 (:predicates (at ?r - robot ?wp - waypoint)
              (available ?r - robot)
-             (camera-equipped ?r - robot ?s - robot-sensor)
-             (arm-equipped ?r - robot ?a - robot-actuator)
+             (camera_equipped ?r - robot ?s - robot_sensor)
+             (arm_equipped ?r - robot ?a - robot_actuator)
 
              (robot_approached ?r - robot ?wp - waypoint)
              (valve_at ?v - valve ?wp - waypoint)
@@ -22,7 +22,7 @@
              (recharge_point ?r -robot ?wp - waypoint)
              (recharged ?r - robot)
              (recovered ?r - robot ?wp - waypoint)
-             (arm_positioned ?a - robot-actuator ?wp - waypoint)
+             (arm_positioned ?a - robot_actuator ?wp - waypoint)
              (valve_regulated ?wp - waypoint)
              (explored ?wp - waypoint)
 
@@ -34,7 +34,7 @@
             (speed ?r - robot)
             (energy ?r - robot)
             (distance ?wpi ?wpf - waypoint)
-            (total-distance)
+            (total_distance)
             (recharge_rate ?r - robot)
 
 )
@@ -54,7 +54,7 @@
         (at end (explored ?wpf))
         (at end (available ?r))
         (at end (decrease (energy ?r) (* (distance ?wpi ?wpf)(consumption ?r))))
-        (at end (increase (total-distance) (distance ?wpi ?wpf)))
+        (at end (increase (total_distance) (distance ?wpi ?wpf)))
         )
 )
 (:durative-action target-approach
@@ -74,12 +74,12 @@
 )
 
 (:durative-action sense-flow
- :parameters (?r - robot ?s - robot-sensor ?v - valve ?wp - waypoint)
+ :parameters (?r - robot ?s - robot_sensor ?v - valve ?wp - waypoint)
  :duration ( = ?duration 5)
  :condition (and
              (over all (at ?r ?wp))
              (over all (valve_at ?v  ?wp))
-             (over all (camera-equipped ?r ?s))
+             (over all (camera_equipped ?r ?s))
              (at start (available ?r))
              (at start (robot_approached ?r ?wp))
              )
@@ -98,12 +98,12 @@
 )
 
 (:durative-action position-arm
- :parameters (?r - robot ?v - valve ?wp - waypoint ?a - robot-actuator)
+ :parameters (?r - robot ?v - valve ?wp - waypoint ?a - robot_actuator)
  :duration ( = ?duration 10)
  :condition (and
              (over all (at ?r ?wp))
              (over all (valve_at ?v  ?wp))
-             (over all (arm-equipped ?r  ?a))
+             (over all (arm_equipped ?r  ?a))
              (at start (robot_approached ?r ?wp))
              )
   :effect (and
@@ -113,11 +113,11 @@
 )
 
 (:durative-action regulate-bop
-:parameters (?r - robot  ?a - robot-actuator ?v - valve ?wp - waypoint ?f - poi)
+:parameters (?r - robot  ?a - robot_actuator ?v - valve ?wp - waypoint ?f - poi)
 :duration (= ?duration 15)
 :condition (and
            (over all (valve_at ?v  ?wp))
-           (over all (arm-equipped ?r  ?a))
+           (over all (arm_equipped ?r  ?a))
            (over all (at ?r ?wp))
            (at start (available ?r))
            (at start (robot_approached ?r ?wp))
@@ -132,7 +132,7 @@
         )
 )
 
-(:durative-action refuel-husky
+(:durative-action refuel
 :parameters (?r - robot  ?wp - waypoint)
 :duration (= ?duration (/ (- 50 (energy ?r)) (recharge_rate ?r)))
 :condition (and

@@ -3,7 +3,7 @@
 (:types
   robot
   waypoint
-  robot-sensor
+  robot_sensor
   poi
 )
 
@@ -23,7 +23,7 @@
              (turned ?r - robot ?wp - waypoint ?p - poi)
              (motor_inspected ?r - robot ?wp - waypoint)
              (area_inspected ?r - robot ?wp - waypoint)
-             (camera_equipped ?r - robot ?s - robot-sensor)
+             (camera_equipped ?r - robot ?s - robot_sensor)
              (motor_inspection_communicated ?r - robot ?wp - waypoint)
 )
 
@@ -31,11 +31,11 @@
             (speed ?r - robot)
             (distance ?wpi ?wpf - waypoint)
             (distance_path ?wpi ?wpf - waypoint ?p - poi)
-            (total-distance)
+            (total_distance)
 )
 
 (:durative-action sense-path
- :parameters (?r - robot ?s - robot-sensor ?wpi - waypoint ?p - poi)
+ :parameters (?r - robot ?s - robot_sensor ?wpi - waypoint ?p - poi)
  :duration ( = ?duration 5)
  :condition (and
              (over all (at ?r ?wpi))
@@ -50,7 +50,7 @@
           )
 )
 
-(:durative-action locCam
+(:durative-action locate-camera
 :parameters (?r - robot ?wp - waypoint ?p - poi)
 :duration ( = ?duration 10)
 :condition (and
@@ -79,7 +79,7 @@
         (at end (at ?r ?wpf))
         (at end (explored ?wpf))
         (at end (available ?r))
-        (at end (increase (total-distance) (distance ?wpi ?wpf)))
+        (at end (increase (total_distance) (distance ?wpi ?wpf)))
         )
 )
 

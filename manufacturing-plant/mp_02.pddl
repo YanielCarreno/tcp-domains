@@ -5,8 +5,8 @@
     wp0 wp1 wp2 wp3 wp4 wp5 wp6 wp7 wp8 wp9 wp10 wp11 wp12 wp13 wp14 wp15 wp16 wp17 wp18 wp19 wp20
     wp21 wp22 wp23 wp24 wp25 wp26 wp27 wp28 wp29 wp30 wp31 wp32 wp33 wp34 wp35 wp36 wp37 wp38 wp39
     wp40 wp41 wp42 wp43 wp44 wp45 - waypoint
-    camera0 sonar0 - robot-sensor
-    arm0 - robot-actuator
+    camera0 sonar0 - robot_sensor
+    arm0 - robot_actuator
     valve1 valve2 valve3 valve4 valve5 valve6 valve7 valve8 valve9 valve10 - valve
 )
 (:init
@@ -14,9 +14,9 @@
 
     (available husky0)
 
-    (camera-equipped husky0 camera0)
+    (camera_equipped husky0 camera0)
 
-    (arm-equipped husky0 arm0)
+    (arm_equipped husky0 arm0)
 
     (is_flow f1)
     (is_flow f2)
@@ -2168,7 +2168,7 @@
     (= (distance wp45 wp44) 30)
     (= (distance wp45 wp45) 0)
 
-    (= (total-distance) 0)
+    (= (total_distance) 0)
 
 )
 

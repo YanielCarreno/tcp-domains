@@ -11,8 +11,8 @@
     wp70 wp71 wp72 wp73 wp74 wp75
     wp80 wp81 wp82 wp83 wp84 wp85 - wpoint
 
-    dvl0 camera0 sonar0 - robot-sensor
-    arm0 - robot-actuator
+    dvl0 camera0 sonar0 - robot_sensor
+    arm0 - robot_actuator
     v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 - poi
 )
 (:init
@@ -20,13 +20,13 @@
 
     (available auv0)
 
-    (camera-equipped auv0 camera0)
+    (camera_equipped auv0 camera0)
 
-    (dvl-equipped auv0 dvl0)
+    (dvl_equipped auv0 dvl0)
 
-    (sonar-equipped auv0 sonar0)
+    (sonar_equipped auv0 sonar0)
 
-    (arm-equipped auv0 arm0)
+    (arm_equipped auv0 arm0)
 
     (is_valve v1)
     (is_valve v2)
@@ -71,14 +71,14 @@
     (valve_at v20 wp85)
 
 
-    (state-on v13)
-    (state-on v14)
-    (state-on v15)
-    (state-on v16)
-    (state-on v17)
-    (state-on v18)
-    (state-on v19)
-    (state-on v20)
+    (state_on v13)
+    (state_on v14)
+    (state_on v15)
+    (state_on v16)
+    (state_on v17)
+    (state_on v18)
+    (state_on v19)
+    (state_on v20)
 
 
     (surface_point_at auv0 wp10)
@@ -87,13 +87,13 @@
     (surface_point_at auv0 wp50)
 
 
-    (at 10 (refuel-derivable auv0 wp40))
-    (at 200 (not (refuel-derivable auv0 wp40)))
-    (at 300 (refuel-derivable auv0 wp30))
-    (at 1500 (not (refuel-derivable auv0 wp30)))
-    (at 1800 (refuel-derivable auv0 wp50))
-    (at 2100 (not (refuel-derivable auv0 wp50)))
-    (at 2200 (refuel-derivable auv0 wp10))
+    (at 10 (refuel_derivable auv0 wp40))
+    (at 200 (not (refuel_derivable auv0 wp40)))
+    (at 300 (refuel_derivable auv0 wp30))
+    (at 1500 (not (refuel_derivable auv0 wp30)))
+    (at 1800 (refuel_derivable auv0 wp50))
+    (at 2100 (not (refuel_derivable auv0 wp50)))
+    (at 2200 (refuel_derivable auv0 wp10))
 
 
     (= (recharge_rate auv0) 10)
@@ -106,7 +106,7 @@
 
     (= (data_capacity auv0) 1)
 
-    (= (data_adquired auv0) 0)
+    (= (data_acquired auv0) 0)
 
     (= (distance wp0 wp0) 0)
     (= (distance wp0 wp1) 104.781)
@@ -2225,43 +2225,43 @@
     (= (distance wp85 wp84) 30)
     (= (distance wp85 wp85) 0)
 
-    (= (total-distance) 0)
+    (= (total_distance) 0)
 
 
 )
 
 (:unknown-prop
 
-   (v1 (state-on v1) )
-   (v2 (state-on v2) )
-   (v3 (state-on v3) )
-   (v4 (state-on v4) )
-   (v5 (state-on v5) )
-   (v6 (state-on v6) )
-   (v7 (state-on v1) )
-   (v8 (state-on v2) )
-   (v9 (state-on v3) )
+   (v1 (state_on v1) )
+   (v2 (state_on v2) )
+   (v3 (state_on v3) )
+   (v4 (state_on v4) )
+   (v5 (state_on v5) )
+   (v6 (state_on v6) )
+   (v7 (state_on v1) )
+   (v8 (state_on v2) )
+   (v9 (state_on v3) )
 
-   (v10 (state-on v10) )
-   (v11 (state-on v11) )
-   (v12 (state-on v12) )
+   (v10 (state_on v10) )
+   (v11 (state_on v11) )
+   (v12 (state_on v12) )
 )
 
 (:knowledge-updates
 
-    (v1 (state-on v1) ((not(state-on v1)) => (valve_closed wp32)) )
-    (v2 (state-on v1) ((not(state-on v2)) => (valve_closed wp34)) )
-    (v3 (state-on v1) ((not(state-on v3)) => (valve_closed wp35)) )
-    (v4 (state-on v1) ((not(state-on v4)) => (valve_closed wp42)) )
-    (v5 (state-on v1) ((not(state-on v5)) => (valve_closed wp45)) )
-    (v6 (state-on v1) ((not(state-on v6)) => (valve_closed wp51)) )
-    (v7 (state-on v1) ((not(state-on v7)) => (valve_closed wp52)) )
-    (v8 (state-on v1) ((not(state-on v8)) => (valve_closed wp54)) )
-    (v9 (state-on v1) ((not(state-on v9)) => (valve_closed wp62)) )
+    (v1 (state_on v1) ((not(state_on v1)) => (valve_closed wp32)) )
+    (v2 (state_on v1) ((not(state_on v2)) => (valve_closed wp34)) )
+    (v3 (state_on v1) ((not(state_on v3)) => (valve_closed wp35)) )
+    (v4 (state_on v1) ((not(state_on v4)) => (valve_closed wp42)) )
+    (v5 (state_on v1) ((not(state_on v5)) => (valve_closed wp45)) )
+    (v6 (state_on v1) ((not(state_on v6)) => (valve_closed wp51)) )
+    (v7 (state_on v1) ((not(state_on v7)) => (valve_closed wp52)) )
+    (v8 (state_on v1) ((not(state_on v8)) => (valve_closed wp54)) )
+    (v9 (state_on v1) ((not(state_on v9)) => (valve_closed wp62)) )
 
-    (v10 (state-on v1) ((not(state-on v10)) => (valve_closed wp63)) )
-    (v11 (state-on v1) ((not(state-on v11)) => (valve_closed wp65)) )
-    (v12 (state-on v1) ((not(state-on v12)) => (valve_closed wp71)) )
+    (v10 (state_on v1) ((not(state_on v10)) => (valve_closed wp63)) )
+    (v11 (state_on v1) ((not(state_on v11)) => (valve_closed wp65)) )
+    (v12 (state_on v1) ((not(state_on v12)) => (valve_closed wp71)) )
 )
 
 (:goal (and
