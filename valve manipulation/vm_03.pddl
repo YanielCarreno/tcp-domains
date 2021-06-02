@@ -1,5 +1,5 @@
 (define (problem task)
-(:domain valve-manipulation)
+(:domain valve manipulation)
 (:objects
     auv0 - robot
     wp0 wp1 wp2 wp3 wp4
@@ -70,15 +70,6 @@
     (valve_at v19 wp84)
     (valve_at v20 wp85)
 
-
-    (state_on v3)
-    (state_on v4)
-    (state_on v5)
-    (state_on v6)
-    (state_on v7)
-    (state_on v8)
-    (state_on v9)
-    (state_on v10)
     (state_on v11)
     (state_on v12)
     (state_on v13)
@@ -2243,20 +2234,55 @@
 
    (v1 (state_on v1) )
    (v2 (state_on v2) )
+   (v3 (state_on v3) )
+   (v4 (state_on v4) )
+   (v5 (state_on v5) )
+   (v6 (state_on v6) )
+   (v7 (state_on v1) )
+   (v8 (state_on v2) )
+   (v9 (state_on v3) )
+
+   (v10 (state_on v10) )
+   (v11 (state_on v11) )
+   (v12 (state_on v12) )
+   (v13 (state_on v13) )
+   (v14 (state_on v14) )
+   (v15 (state_on v15) )
+   (v16 (state_on v16) )
+   (v17 (state_on v17) )
+   (v18 (state_on v18) )
+   (v19 (state_on v19) )
+   (v20 (state_on v20) )
 )
 
 (:knowledge-updates
 
     (v1 (state_on v1) ((not(state_on v1)) => (valve_closed wp32)) )
     (v2 (state_on v1) ((not(state_on v2)) => (valve_closed wp34)) )
+    (v3 (state_on v1) ((not(state_on v3)) => (valve_closed wp35)) )
+    (v4 (state_on v1) ((not(state_on v4)) => (valve_closed wp42)) )
+    (v5 (state_on v1) ((not(state_on v5)) => (valve_closed wp45)) )
+    (v6 (state_on v1) ((not(state_on v6)) => (valve_closed wp51)) )
+    (v7 (state_on v1) ((not(state_on v7)) => (valve_closed wp52)) )
+    (v8 (state_on v1) ((not(state_on v8)) => (valve_closed wp54)) )
+    (v9 (state_on v1) ((not(state_on v9)) => (valve_closed wp62)) )
+
+    (v10 (state_on v1) ((not(state_on v10)) => (valve_closed wp63)) )
 )
 
 (:goal (and
        (valve_closed wp32)
        (valve_closed wp34)
+       (valve_closed wp35)
+       (valve_closed wp42)
+       (valve_closed wp45)
+       (valve_closed wp51)
+       (valve_closed wp52)
+       (valve_closed wp54)
+       (valve_closed wp62)
+       (valve_closed wp63)
        (recharged auv0)
        (recovered auv0 wp0)
-
 ))
 (:metric minimize (total-time))
 ;(:metric maximize (total-time))

@@ -1,5 +1,5 @@
 (define (problem task)
-(:domain oil-rig)
+(:domain offshore energy platform)
 (:objects
     husky0 - robot
     wpGF-0 wpGF-1 wpGF-2 wpGF-3 wpGF-4 wpGF-5 wpGF-6 wpGF-7 wpGF-8 wpGF-9 wpGF-10 wpGF-11 wpGF-12 wpGF-13 wpGF-14 wpGF-15
@@ -261,11 +261,11 @@
     (path_option wpT4F3-4 wpT4F3-5 pathT4F3-4-T4F3-5)
     (path_option wpT4F3-5 wpT4F3-4 pathT4F3-5-T4F3-4)
 
-
     (path_free wpGF-2 pathGF-2-T1F1-1)
     (path_free wpGF-3 pathGF-3-T2F1-1)
     (path_free wpGF-15 pathGF-15-T3F1-1)
     (path_free wpGF-13 pathGF-13-T4F1-1)
+
 
     (path_free wpT1F1-1 pathT1F1-1-GF-2)
     (path_free wpT1F1-1 pathT1F1-1-T1F1-2)
@@ -579,6 +579,7 @@
 
     (= (total_distance) 0)
 
+
 )
 
 (:unknown-prop
@@ -616,11 +617,17 @@
 
 (:goal (and
 
+    (explored wpGF-1)
+    (motor_inspected husky0 wpGF-10)
+    (motor_inspected husky0 wpGF-12)
+
     (motor_inspection_communicated husky0 wpT1F1-1)
     (motor_inspection_communicated husky0 wpT1F3-2)
     (motor_inspection_communicated husky0 wpT2F2-3)
     (motor_inspection_communicated husky0 wpT3F2-4)
     (motor_inspection_communicated husky0 wpT4F3-3)
+    (recovered husky0 wpGF-0)
+
 
 ))
 (:metric minimize (total-time))

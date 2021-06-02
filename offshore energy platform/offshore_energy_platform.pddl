@@ -1,4 +1,4 @@
-(define (domain oil-rig)
+(define (domain offshore energy platform)
 (:requirements :strips :typing :fluents :negative-preconditions :disjunctive-preconditions :durative-actions :conditional-effects :duration-inequalities :universal-preconditions )
 (:types
   robot
