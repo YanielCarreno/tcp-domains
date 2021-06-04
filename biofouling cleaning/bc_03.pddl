@@ -1,5 +1,5 @@
 (define (problem task)
-(:domain valve manipulation)
+(:domain biofouling_cleaning)
 (:objects
     auv0 - robot
     wp0 wp1 wp2 wp3 wp4
@@ -70,6 +70,11 @@
     (valve_at v19 wp84)
     (valve_at v20 wp85)
 
+    (state_on v11)
+    (state_on v12)
+    (state_on v13)
+    (state_on v14)
+    (state_on v15)
     (state_on v16)
     (state_on v17)
     (state_on v18)
@@ -2242,6 +2247,12 @@
    (v12 (state_on v12) )
    (v13 (state_on v13) )
    (v14 (state_on v14) )
+   (v15 (state_on v15) )
+   (v16 (state_on v16) )
+   (v17 (state_on v17) )
+   (v18 (state_on v18) )
+   (v19 (state_on v19) )
+   (v20 (state_on v20) )
 )
 
 (:knowledge-updates
@@ -2257,11 +2268,6 @@
     (v9 (state_on v1) ((not(state_on v9)) => (valve_closed wp62)) )
 
     (v10 (state_on v1) ((not(state_on v10)) => (valve_closed wp63)) )
-    (v11 (state_on v1) ((not(state_on v11)) => (valve_closed wp65)) )
-    (v12 (state_on v1) ((not(state_on v12)) => (valve_closed wp71)) )
-    (v13 (state_on v1) ((not(state_on v13)) => (valve_closed wp72)) )
-    (v14 (state_on v1) ((not(state_on v14)) => (valve_closed wp74)) )
-    (v15 (state_on v1) ((not(state_on v15)) => (valve_closed wp75)) )
 )
 
 (:goal (and
@@ -2275,11 +2281,6 @@
        (valve_closed wp54)
        (valve_closed wp62)
        (valve_closed wp63)
-       (valve_closed wp65)
-       (valve_closed wp71)
-       (valve_closed wp72)
-       (valve_closed wp74)
-       (valve_closed wp75)
        (recharged auv0)
        (recovered auv0 wp0)
 ))

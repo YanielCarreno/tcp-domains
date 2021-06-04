@@ -1,5 +1,5 @@
 (define (problem task)
-(:domain offshore energy platform)
+(:domainoffshore_energy_platform)
 (:objects
     husky0 - robot
     wpGF-0 wpGF-1 wpGF-2 wpGF-3 wpGF-4 wpGF-5 wpGF-6 wpGF-7 wpGF-8 wpGF-9 wpGF-10 wpGF-11 wpGF-12 wpGF-13 wpGF-14 wpGF-15

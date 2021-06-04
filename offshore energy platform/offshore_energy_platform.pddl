@@ -1,4 +1,4 @@
-(define (domain offshore energy platform)
+(define (domain offshore_energy_platform)
 (:requirements :strips :typing :fluents :negative-preconditions :disjunctive-preconditions :durative-actions :conditional-effects :duration-inequalities :universal-preconditions )
 (:types
   robot

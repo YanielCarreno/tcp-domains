@@ -1,5 +1,5 @@
 (define (problem task)
-(:domain valve manipulation)
+(:domain biofouling_cleaning)
 (:objects
     auv0 - robot
     wp0 wp1 wp2 wp3 wp4

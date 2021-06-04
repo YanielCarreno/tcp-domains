@@ -1,5 +1,5 @@
 (define (problem task)
-(:domain manufacturing plant)
+(:domain manufacturing_plant)
 (:objects
     husky0 - robot
     wp0 wp1 wp2 wp3 wp4 wp5 wp6 wp7 wp8 wp9 wp10 wp11 wp12 wp13 wp14 wp15 wp16 wp17 wp18 wp19 wp20

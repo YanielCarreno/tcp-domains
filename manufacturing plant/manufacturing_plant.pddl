@@ -1,4 +1,4 @@
-(define (domain manufacturing-plant)
+(define (domain manufacturing_plant)
 (:requirements :strips :typing :fluents :negative-preconditions :timed-initial-literals :disjunctive-preconditions :durative-actions :conditional-effects :duration-inequalities :universal-preconditions )
 (:types
   robot
