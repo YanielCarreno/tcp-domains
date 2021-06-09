@@ -1,168 +1,207 @@
 (define (domain biofouling_cleaning)
-(:requirements :strips :typing :fluents :negative-preconditions :disjunctive-preconditions :durative-actions :conditional-effects :duration-inequalities :universal-preconditions :timed-initial-literals)
+(:requirements :strips :typing :fluents :disjunctive-preconditions :durative-actions :timed-initial-literals)
 (:types
   robot
-  wpoint
+  waypoint
   robot_sensor
   robot_actuator
   poi
 )
 
-
-(:predicates (at ?r - robot ?wp - wpoint)
-
+(:predicates (robot_at  ?r - robot ?wp - waypoint)
              (available ?r - robot)
 
-             (state_on ?v - poi)
+             (camera_equipped      ?r - robot ?s - robot_sensor)
+             (manipulator_equipped ?r - robot ?a - robot_actuator)
+             (cleaner_equipped ?r - robot ?a - robot_actuator)
 
-             (camera_equipped ?r - robot ?s - robot_sensor)
+             (valve_closed       ?p - poi)
+             (bla_cleaned        ?p - poi)
 
-             (dvl_equipped    ?r - robot ?s - robot_sensor)
+             (explored           ?wp - waypoint)
+             (robot_approached   ?r - robot  ?wp - waypoint)
+             (recharged          ?r - robot)
+             (recovered          ?r - robot  ?wp - waypoint)
 
-             (sonar_equipped  ?r - robot ?s - robot_sensor)
+             (valve_at           ?p - poi  ?wp - waypoint)
+             (structure_at       ?p - poi  ?wp - waypoint)
 
-             (arm_equipped  ?r - robot ?a - robot_actuator)
+             (docking_point      ?r - robot  ?wp - waypoint)
 
-             (robot_approached ?r - robot ?wp - wpoint)
-             (surface_point_at ?r - robot ?wp - wpoint)
-             (valve_at ?v - poi ?wp - wpoint)
-             (valve_closed ?wp - wpoint)
-             (explored     ?wp - wpoint)
-             (recovered ?r - robot ?wp - wpoint)
-             (recharged ?r -robot)
+             (refuel_deliverable ?r - robot  ?wp - waypoint)
 
-             (refuel_derivable ?r - robot ?sp - wpoint)
+             (known_state ?r - robot ?p - poi)
+             (state_on ?p - poi)
+             (bla_obstructed ?p - poi)
 
-             ; this predicate is used to diferenciate the poi flow from another we want to establish in the domain
-             (is_valve ?v - poi)
+             (is_valve ?p - poi)
+             (is_structure ?p - poi)
 )
 
 (:functions (consumption ?r - robot)
-            (speed ?r - robot)
-            (energy ?r - robot)
-            (distance ?wpi ?wpf - wpoint)
+            (speed       ?r - robot)
+            (energy      ?r - robot)
+            (distance    ?wpi ?wpf - waypoint)
 
-            (data_acquired ?r - robot)
-            (data_capacity ?r - robot)
+            (data_adquired  ?r - robot)
+            (data_capacity  ?r - robot)
+            (recharge_rate  ?r - robot)
             (total_distance)
-            (recharge_rate ?r - robot)
+)
+
+(:durative-action sense-valve
+ :parameters (?r - robot ?s - robot_sensor ?v - poi ?wp - waypoint)
+ :duration ( = ?duration 5)
+ :condition (and
+             (over all (robot_at ?r ?wp))
+             (over all (valve_at ?v  ?wp))
+             (over all (is_valve ?v))
+             (over all (camera_equipped ?r ?s))
+             (at start (< (data_adquired ?r) (data_capacity ?r)))
+             (at start (available ?r))
+             (at start (robot_approached ?r ?wp))
+             )
+  :effect (and
+          (at start (not (available ?r)))
+          (at end   (available ?r))
+          (at end   (known_state ?r ?v))
+          (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
+          )
+)
+
+(:durative-action close-valve
+ :parameters (?r - robot  ?a - robot_actuator ?v - poi ?wp - waypoint)
+ :duration (= ?duration 15)
+ :condition (and
+            (over all (valve_at ?v  ?wp))
+            (over all (manipulator_equipped ?r  ?a))
+            (over all (is_valve ?v))
+            (over all (robot_at ?r ?wp))
+            (at start (and (state_on ?v) (known_state ?r ?v)))
+            (at start (available ?r))
+            (at start (robot_approached ?r ?wp))
+            )
+ :effect (and
+         (at start (not (available ?r)))
+         (at end   (available ?r))
+         (at end   (not (state_on ?v)))
+         (at end   (valve_closed ?v))
+         (at end   (decrease (energy ?r) (* (energy ?r) 0.05)))
+         )
+)
+
+(:durative-action inspect-area
+ :parameters (?r - robot ?s - robot_sensor ?t - poi ?wp - waypoint)
+ :duration ( = ?duration 30)
+ :condition (and
+             (over all (robot_at ?r ?wp))
+             (over all (structure_at ?t  ?wp))
+             (over all (is_structure ?t))
+             (over all (camera_equipped ?r ?s))
+             (at start (available ?r))
+             )
+  :effect (and
+          (at start (not (available ?r)))
+          (at end   (available ?r))
+          (at end   (known_state ?r ?t))
+          (at end   (decrease (energy ?r) (* (energy ?r) 0.1)))
+          )
+)
+
+(:durative-action clean-biofouling
+ :parameters (?r - robot  ?a - robot_actuator ?t - poi ?wp - waypoint)
+ :duration (= ?duration 50)
+ :condition (and
+            (over all (structure_at ?t  ?wp))
+            (over all (cleaner_equipped ?r  ?a))
+            (over all (is_structure ?t))
+            (over all (robot_at ?r ?wp))
+            (at start (and (bla_obstructed ?t) (known_state ?r ?t)))
+            (at start (available ?r))
+            )
+ :effect (and
+         (at start (not (available ?r)))
+         (at end   (available ?r))
+         (at end   (not (bla_obstructed ?t)))
+         (at end   (bla_cleaned ?t))
+         (at end   (decrease (energy ?r) (* (energy ?r) 0.25)))
+         )
 )
 
 (:durative-action navigation
-:parameters (?r - robot ?wpi  ?wpf - wpoint)
-:duration ( = ?duration (* (/ (distance ?wpi ?wpf) (speed ?r)) 1))
+:parameters (?r - robot ?wpi  ?wpf - waypoint)
+:duration ( = ?duration (* (/ (distance ?wpi ?wpf) (speed ?r)) 1.8))
 :condition (and
            (at start (available ?r))
-           (at start (at ?r ?wpi))
+           (at start (robot_at ?r ?wpi))
            (at start (>= (energy ?r) (* (distance ?wpi ?wpf)(consumption ?r))))
            )
 :effect (and
         (at start (not (available ?r)))
-        (at start (not (at ?r ?wpi)))
-        (at end (at ?r ?wpf))
-        (at end (explored ?wpf))
-        (at end (available ?r))
-        (at end (decrease (energy ?r) (* (distance ?wpi ?wpf)(consumption ?r))))
-        (at end (increase (total_distance) (distance ?wpi ?wpf)))
+        (at start (not (robot_at ?r ?wpi)))
+        (at end   (decrease (energy ?r) (* (distance ?wpi ?wpf)(consumption ?r))))
+        (at end   (robot_at ?r ?wpf))
+        (at end   (explored ?wpf))
+        (at end   (available ?r))
+        (at end   (increase (total_distance) (distance ?wpi ?wpf)))
         )
 )
 
 (:durative-action target-approach
-  :parameters (?r - robot  ?wp - wpoint)
-  :duration ( = ?duration 15)
+  :parameters (?r - robot  ?wp - waypoint)
+  :duration ( = ?duration 10)
   :condition (and
-             (over all (at ?r ?wp))
+             (over all (robot_at ?r ?wp))
              (at start (available ?r))
-             (at start (>= (energy ?r) 15))
              )
   :effect (and
           (at start (not (available ?r)))
-          (at end (robot_approached ?r ?wp))
-          (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
-          (at end (available ?r))
+          (at end   (robot_approached ?r ?wp))
+          (at end   (available ?r))
+          (at end   (decrease (energy ?r) (* (energy ?r) 0.05)))
           )
-)
-
-(:durative-action sense-valve
- :parameters (?r - robot ?s - robot_sensor ?v - poi ?wp - wpoint)
- :duration ( = ?duration 50)
- :condition (and
-             (over all (at ?r ?wp))
-             (over all (valve_at ?v  ?wp))
-             (over all (is_valve ?v))
-             (over all (camera_equipped ?r ?s))
-             (at start (< (data_acquired ?r) (data_capacity ?r)))
-             (at start (available ?r))
-             (at start (robot_approached ?r ?wp))
-             )
-  :effect (and (at start (not (available ?r)))
-          (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
-          (at end (K+ (state_on ?v)))
-          (at end (available ?r))
-          )
-)
-
-(:durative-action close-bop
-:parameters (?r - robot  ?a - robot_actuator ?v - poi ?wp - wpoint)
-:duration (= ?duration 15)
-:condition (and
-           (over all (valve_at ?v  ?wp))
-           (over all (arm_equipped ?r  ?a))
-           (over all (at ?r ?wp))
-           (over all (is_valve ?v))
-           (at start (state_on ?v))
-           (at start (available ?r))
-           (at start (robot_approached ?r ?wp))
-           )
-:effect (and
-        (at start (not (available ?r)))
-        (at end (assign (data_acquired ?r) 1))
-        (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
-        (at end (available ?r))
-        (at end (valve_closed ?wp))
-  )
 )
 
 (:durative-action broadcast-data
-:parameters (?r - robot   ?wp - wpoint)
+:parameters (?r - robot   ?wp - waypoint)
 :duration (= ?duration 20)
 :condition (and
-           (over all (at ?r ?wp))
-           (over all (surface_point_at ?r ?wp))
+           (over all (robot_at ?r ?wp))
+           (at start (docking_point ?r ?wp))
            (at start (available ?r))
-           (at start (>= (data_acquired ?r) (data_capacity ?r)))
+           (at start (>= (data_adquired ?r) (data_capacity ?r)))
            )
 :effect (and
         (at start (not (available ?r)))
-        (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
-        (at end (available ?r))
-        (at end (assign (data_acquired ?r) 0))
+        (at end   (available ?r))
+        (at end   (assign (data_adquired ?r) 0))
+        (at end   (decrease (energy ?r) (* (energy ?r) 0.05)))
 	      )
 )
 
-(:durative-action refuel
-:parameters (?r - robot  ?sp - wpoint)
-:duration (= ?duration (/ (- 80 (energy ?r)) (recharge_rate ?r)))
+(:durative-action recharge-battery
+:parameters (?r - robot  ?wp - waypoint)
+:duration (= ?duration (/ (- 100 (energy ?r)) (recharge_rate ?r)))
 :condition (and
-           (over all (surface_point_at ?r ?sp))
-           (over all (at ?r ?sp))
-           (over all (refuel_derivable ?r ?sp))
+           (over all (robot_at ?r ?wp))
+           (over all (docking_point ?r ?wp))
+           (at start (refuel_deliverable ?r ?wp))
            (at start (available ?r))
-           (at start (<= (energy ?r) 80))
+           (at start (<= (energy ?r) 60))
            )
 :effect (and
         (at start (not (available ?r)))
-        (at end (available ?r))
-        (at end (recharged ?r))
-        (at end (increase (energy ?r) (* ?duration (recharge_rate ?r))))
+        (at end   (available ?r))
+        (at end   (recharged ?r))
+        (at end   (assign (energy ?r) 100))
         )
 )
 
-(:durative-action recover
-:parameters (?r - robot  ?wp - wpoint)
+(:durative-action recover-robot
+:parameters (?r - robot  ?wp - waypoint)
 :duration (= ?duration 1)
 :condition (and
-           (over all (at ?r ?wp))
+           (over all (robot_at ?r ?wp))
            (at start (available ?r))
            )
 :effect (and
@@ -171,5 +210,4 @@
         (at end   (recovered ?r ?wp))
         )
 )
-
 )
