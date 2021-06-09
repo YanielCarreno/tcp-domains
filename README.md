@@ -30,8 +30,21 @@ DOMAIN DESCRIPTIONS:
 
   neighbourhoods:
 
- <p align="justify">
- The delivery of parcels to two neighbourhoods (N-1 and N-2) linked by a road  is considered in this domain. The post office is halfway from both areas, and a robot distributes all parcels. The houses have a front garden with a door which can be open or closed. The robot needs to leave the package in the house independently of the state of the door. Residents of N-1 work the whole afternoon, which has to be considered to deliver packages that require personal checks. In addition, the robot should return to the post office sometimes during the day to check if new packages arrive. The  domain introduces temporal preferences into the problem to deal with priorities in the delivery as well as reasoning about incomplete knowledge related to the door state.
- </p>
+  <p align="justify">
+  The delivery of parcels to two neighbourhoods (N-1 and N-2) linked by a road  is considered in this domain. The post office is halfway from both areas, and a robot distributes all parcels. The houses have a front garden with a door which can be open or closed. The robot needs to leave the package in the house independently of the state of the door. Residents of N-1 work the whole afternoon, which has to be considered to deliver packages that require personal checks. In addition, the robot should return to the post office sometimes during the day to check if new packages arrive. The  domain introduces temporal preferences into the problem to deal with priorities in the delivery as well as reasoning about incomplete knowledge related to the door state.
+  </p>
 
- <p align="center"> <img src="/actual_figures/n.png" align="center" width="700" height="230"> </p>
+  <p align="center"> <img src="/actual_figures/n.png" align="center" width="700" height="230"> </p>
+
+
+  Underwater Structure (ICAPS-21 PlanRob Workshop):
+
+  <p align="justify">
+  This domain considers the inspection of an underwater structure in a real environment.
+  </p>
+
+  Biofouling Cleaning (ICAPS-21 PlanRob Workshop):
+
+  <p align="justify">
+  This domain considers the inspection of underwater strutures and the cleaning of biofouling around boat landing area (BLA) at the wind turbine bases.
+  </p>
