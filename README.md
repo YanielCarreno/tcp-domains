@@ -42,7 +42,7 @@ DOMAIN DESCRIPTIONS:
   This domain considers the inspection of an underwater structure in a real environment.
   </p>
 
-  <p align="center"> <img src="/actual_figures/dora.png" align="center" width="700" height="230"> </p>
+  <p align="center"> <img src="/actual_figures/dora.png" align="center" width="600" height="230"> </p>
 
   (6) Biofouling Cleaning (ICAPS-21 PlanRob Workshop):
 
@@ -50,4 +50,4 @@ DOMAIN DESCRIPTIONS:
   This domain considers the inspection of underwater strutures and the cleaning of biofouling around boat landing area (BLA) at the wind turbine bases.
   </p>
 
-  <p align="center"> <img src="/actual_figures/system.png" align="center" width="700" height="230"> </p>
+  <p align="center"> <img src="/actual_figures/system.png" align="center" width="600" height="230"> </p>
