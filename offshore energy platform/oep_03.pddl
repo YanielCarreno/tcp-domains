@@ -475,18 +475,18 @@
 
 (:unknown-prop
 
-   (pathGF-1-GF-0 (path_free wpGF-1 pathGF-1-GF-0) )
-   (pathGF-1-GF-2 (path_free wpGF-1 pathGF-1-GF-2) )
-   (pathGF-2-GF-1 (path_free wpGF-2 pathGF-2-GF-1) )
-   (pathGF-2-GF-3 (path_free wpGF-2 pathGF-2-GF-3) )
-   (pathGF-2-GF-15 (path_free wpGF-2 pathGF-2-GF-15) )
-   (pathGF-4-GF-5 (path_free wpGF-4 pathGF-4-GF-5) )
-   (pathGF-4-GF-6 (path_free wpGF-4 pathGF-4-GF-6) )
-   (pathGF-14-GF-13 (path_free wpGF-14 pathGF-14-GF-13) )
-   (pathGF-14-GF-15 (path_free wpGF-14 pathGF-14-GF-15) )
-   (pathGF-15-GF-14 (path_free wpGF-15 pathGF-15-GF-14) )
-   (pathGF-15-GF-2 (path_free wpGF-15 pathGF-15-GF-2) )
-   (pathGF-15-GF-4 (path_free wpGF-15 pathGF-15-GF-4) )
+   (path_free wpGF-1 pathGF-1-GF-0)
+   (path_free wpGF-1 pathGF-1-GF-2)
+   (path_free wpGF-2 pathGF-2-GF-1)
+   (path_free wpGF-2 pathGF-2-GF-3)
+   (path_free wpGF-2 pathGF-2-GF-15)
+   (path_free wpGF-4 pathGF-4-GF-5)
+   (path_free wpGF-4 pathGF-4-GF-6)
+   (path_free wpGF-14 pathGF-14-GF-13)
+   (path_free wpGF-14 pathGF-14-GF-15)
+   (path_free wpGF-15 pathGF-15-GF-14)
+   (path_free wpGF-15 pathGF-15-GF-2)
+   (path_free wpGF-15 pathGF-15-GF-4) 
 )
 (:knowledge-updates
 
