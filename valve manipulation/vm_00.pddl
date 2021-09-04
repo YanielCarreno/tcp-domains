@@ -2241,14 +2241,14 @@
 
 (:unknown-prop
 
-   (v1 (state_on v1) )
-   (v2 (state_on v2) )
+   (state_on v1)
+   (state_on v2)
 )
 
 (:knowledge-updates
 
-    (v1 (state_on v1) ((not(state_on v1)) => (valve_closed wp32)) )
-    (v2 (state_on v1) ((not(state_on v2)) => (valve_closed wp34)) )
+    (oneof (state_on v1) (and (not (state_on v1))  (valve_closed wp32)) )
+    (oneof (state_on v1) (and (not (state_on v2))  (valve_closed wp34)) )
 )
 
 (:goal (and

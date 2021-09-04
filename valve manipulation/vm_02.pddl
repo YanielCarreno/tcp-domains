@@ -2237,20 +2237,20 @@
 
 (:unknown-prop
 
-   (v1 (state_on v1) )
-   (v2 (state_on v2) )
-   (v3 (state_on v3) )
-   (v4 (state_on v4) )
-   (v5 (state_on v5) )
+   (state_on v1)
+   (state_on v2)
+   (state_on v3)
+   (state_on v4)
+   (state_on v5)
 )
 
 (:knowledge-updates
 
-    (v1 (state_on v1) ((not(state_on v1)) => (valve_closed wp32)) )
-    (v2 (state_on v1) ((not(state_on v2)) => (valve_closed wp34)) )
-    (v3 (state_on v1) ((not(state_on v3)) => (valve_closed wp35)) )
-    (v4 (state_on v1) ((not(state_on v4)) => (valve_closed wp42)) )
-    (v5 (state_on v1) ((not(state_on v5)) => (valve_closed wp45)) )
+    (oneof (state_on v1) (and (not (state_on v1)) (valve_closed wp32)) )
+    (oneof (state_on v1) (and (not (state_on v2))  (valve_closed wp34)) )
+    (oneof (state_on v1) (and (not (state_on v3))  (valve_closed wp35)) )
+    (oneof (state_on v1) (and (not (state_on v4))  (valve_closed wp42)) )
+    (oneof (state_on v1) (and (not (state_on v5))  (valve_closed wp45)) )
 )
 
 (:goal (and
