@@ -29,7 +29,6 @@
 
              (refuel_deliverable ?r - robot  ?wp - waypoint)
 
-             (known_state ?r - robot ?p - poi)
              (state_on ?p - poi)
 
              (is_valve ?p - poi)
@@ -64,7 +63,9 @@
   :effect (and
           (at start (not (available ?r)))
           (at end   (available ?r))
-          (at end   (known_state ?r ?st))
+          (at end   (K+ (low_visibility ?st)))
+          (at end   (K+ (strong_current ?st)))
+          (at end   (K+ (structure_located ?st)))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
 )
@@ -77,7 +78,7 @@
             (over all (structure_at ?st  ?wp))
             (over all (is_structure ?st))
             (over all (robot_at ?r ?wp))
-            (at start (and (low_visibility ?st) (known_state ?r ?st)))
+            (at start (low_visibility ?st))
             (at start (available ?r))
             )
  :effect (and
@@ -95,7 +96,7 @@
             (over all (structure_at ?st  ?wp))
             (over all (is_structure ?st))
             (over all (robot_at ?r ?wp))
-            (at start (and (strong_current ?st) (known_state ?r ?st)))
+            (at start (strong_current ?st))
             (at start (available ?r))
             )
  :effect (and
@@ -114,14 +115,14 @@
              (over all (valve_at ?v  ?wp))
              (over all (is_valve ?v))
              (over all (camera_equipped ?r ?s))
-             (at start (and (structure_located ?st) (known_state ?r ?st)))
+             (at start (structure_located ?st))
              (at start (< (data_adquired ?r) (data_capacity ?r)))
              (at start (available ?r))
              )
   :effect (and
           (at start (not (available ?r)))
           (at end   (available ?r))
-          (at end   (known_state ?r ?v))
+          (at end   (K+ (state_on ?v)))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
 )
@@ -134,8 +135,8 @@
             (over all (manipulator_equipped ?r  ?a))
             (over all (is_valve ?v))
             (over all (robot_at ?r ?wp))
-            (at start (and (state_on ?v) (known_state ?r ?v)))
-            (at start (and (structure_located ?st) (known_state ?r ?st)))
+            (at start (state_on ?v))
+            (at start (structure_located ?st))
             (at start (available ?r))
             )
  :effect (and
