@@ -283,19 +283,19 @@
 
 (:unknown-prop
 
-   (house0loc0 (door_closed house0loc0) )
-   (house1loc0 (door_closed house1loc0) )
-   (house2loc0 (door_closed house2loc0) )
-   (house3loc0 (door_closed house3loc0) )
-   (house4loc0 (door_closed house4loc0) )
+   (door_closed house0loc0)
+   (door_closed house1loc0)
+   (door_closed house2loc0)
+   (door_closed house3loc0)
+   (door_closed house4loc0)
 )
 (:knowledge-updates
 
-  (house0loc0 (door_closed house0loc0) ((not (door_closed house0loc0)) => (door_open house0loc0)) )
-  (house1loc0 (door_closed house1loc0) ((not (door_closed house1loc0)) => (door_open house1loc0)) )
-  (house2loc0 (door_closed house2loc0) ((not (door_closed house2loc0)) => (door_open house2loc0)) )
-  (house3loc0 (door_closed house3loc0) ((not (door_closed house3loc0)) => (door_open house3loc0)) )
-  (house4loc0 (door_closed house4loc0) ((not (door_closed house4loc0)) => (door_open house4loc0)) )
+  (oneof (door_closed house0loc0) (and (not (door_closed house0loc0)) (door_open house0loc0)) )
+  (oneof (door_closed house1loc0) (and (not (door_closed house1loc0)) (door_open house1loc0)) )
+  (oneof (door_closed house2loc0) (and (not (door_closed house2loc0)) (door_open house2loc0)) )
+  (oneof (door_closed house3loc0) (and (not (door_closed house3loc0)) (door_open house3loc0)) )
+  (oneof (door_closed house4loc0) (and (not (door_closed house4loc0)) (door_open house4loc0)) )
 )
 
 
