@@ -48,6 +48,10 @@ DOMAIN DESCRIPTIONS:
 
   <p align="justify">
   This domain considers the inspection of underwater strutures and the cleaning of biofouling around boat landing area (BLA) at the wind turbine bases.
+
+        6.1 biofouling cleaning (simulation scenario)
+
+        6.2 underwater structure (real scenario)
   </p>
 
   <p align="center"> <img src="/actual_figures/system.png" align="center" width="400" height="230"> </p>
