@@ -2249,9 +2249,9 @@
 (:knowledge-updates
 
     (oneof (state_on v1) (and (not (state_on v1))  (valve_closed wp32)) )
-    (oneof (state_on v1) (and (not (state_on v2))  (valve_closed wp34)) )
-    (oneof (state_on v1) (and (not (state_on v3))  (valve_closed wp35)) )
-    (oneof (state_on v1) (and (not (state_on v4))  (valve_closed wp42)) )
+    (oneof (state_on v2) (and (not (state_on v2))  (valve_closed wp34)) )
+    (oneof (state_on v3) (and (not (state_on v3))  (valve_closed wp35)) )
+    (oneof (state_on v4) (and (not (state_on v4))  (valve_closed wp42)) )
 )
 
 (:goal (and

@@ -11,28 +11,6 @@
 )
 (:init
 
-    (unknown (state_on v1))
-    (unknown (state_on v2))
-    (unknown (state_on v3))
-    (unknown (state_on v4))
-    (unknown (state_on v5))
-    (unknown (state_on v6))
-    (unknown (state_on v7))
-    (unknown (state_on v8))
-    (unknown (state_on v9))
-    (unknown (state_on v10))
-
-    (unknown (bla_obstructed t1))
-    (unknown (bla_obstructed t2))
-    (unknown (bla_obstructed t3))
-    (unknown (bla_obstructed t4))
-    (unknown (bla_obstructed t5))
-    (unknown (bla_obstructed t6))
-    (unknown (bla_obstructed t7))
-    (unknown (bla_obstructed t8))
-    (unknown (bla_obstructed t9))
-    (unknown (bla_obstructed t10))
-
     ;(state_on v1)
     ;(state_on v2)
     ;(state_on v3)

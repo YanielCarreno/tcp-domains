@@ -30,7 +30,6 @@
 
              (refuel_deliverable ?r - robot  ?wp - waypoint)
 
-             (known_state ?r - robot ?p - poi)
              (state_on ?p - poi)
              (bla_obstructed ?p - poi)
 
@@ -64,7 +63,7 @@
   :effect (and
           (at start (not (available ?r)))
           (at end   (available ?r))
-          (at end   (known_state ?r ?v))
+          (at end   (K+ (state_on ?v)))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
 )
@@ -77,7 +76,7 @@
             (over all (manipulator_equipped ?r  ?a))
             (over all (is_valve ?v))
             (over all (robot_at ?r ?wp))
-            (at start (and (state_on ?v) (known_state ?r ?v)))
+            (at start (state_on ?v))
             (at start (available ?r))
             (at start (robot_approached ?r ?wp))
             )
@@ -103,7 +102,7 @@
   :effect (and
           (at start (not (available ?r)))
           (at end   (available ?r))
-          (at end   (known_state ?r ?t))
+          (at end   (K+ (bla_obstructed ?t)))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.1)))
           )
 )
@@ -116,7 +115,7 @@
             (over all (cleaner_equipped ?r  ?a))
             (over all (is_structure ?t))
             (over all (robot_at ?r ?wp))
-            (at start (and (bla_obstructed ?t) (known_state ?r ?t)))
+            (at start (bla_obstructed ?t))
             (at start (available ?r))
             )
  :effect (and
