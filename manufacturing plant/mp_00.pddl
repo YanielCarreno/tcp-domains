@@ -2179,24 +2179,24 @@
 
 (:unknown-prop
 
-  (valve1  (flow_val valve1 f1) (flow_val valve1 f2)  (flow_val valve1 f3) (flow_val valve1 f4) )
-  (valve2  (flow_val valve2 f1) (flow_val valve2 f2)  (flow_val valve2 f3) (flow_val valve2 f4) )
+  (flow_val valve1 f1) (flow_val valve1 f2)  (flow_val valve1 f3) (flow_val valve1 f4)
+  (flow_val valve2 f1) (flow_val valve2 f2)  (flow_val valve2 f3) (flow_val valve2 f4)
 
 )
 
 (:knowledge-updates
 
-  (valve1  ((flow_val valve1 f1) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
-         ((not (flow_val valve1 f1)) (flow_val valve1 f2) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
-         ((not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (flow_val valve1 f3) (not (flow_val valve1 f4)) )
-         ((not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (flow_val valve1 f4) )
-         (((not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) ) => (valve_regulated wp12))
+  (oneof  (and (flow_val valve1 f1) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
+          (and (not (flow_val valve1 f1)) (flow_val valve1 f2) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
+          (and (not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (flow_val valve1 f3) (not (flow_val valve1 f4)) )
+          (and (not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (flow_val valve1 f4) )
+          (and (not (flow_val valve1 f1) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) (valve_regulated wp12))
   )
-  (valve2  ((flow_val valve2 f1) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
-           ((not (flow_val valve2 f1)) (flow_val valve2 f2) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
-           ((not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (flow_val valve2 f3) (not (flow_val valve2 f4)) )
-           ((not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (flow_val valve2 f4) )
-           (((not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) ) => (valve_regulated wp15))
+  (oneof   (and (flow_val valve2 f1) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
+           (and (not (flow_val valve2 f1)) (flow_val valve2 f2) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
+           (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (flow_val valve2 f3) (not (flow_val valve2 f4)) )
+           (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (flow_val valve2 f4) )
+           (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) (valve_regulated wp15))
   )
 
 )
