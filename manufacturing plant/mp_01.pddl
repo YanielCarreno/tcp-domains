@@ -1,4 +1,4 @@
-(define (problem task)
+(define (problem mp_01)
 (:domain manufacturing_plant)
 (:objects
     husky0 - robot
@@ -2168,43 +2168,6 @@
     (= (distance wp45 wp45) 0)
 
     (= (total_distance) 0)
-
-)
-
-(:unknown-prop
-
-  (flow_val valve1 f1) (flow_val valve1 f2)  (flow_val valve1 f3) (flow_val valve1 f4)
-  (flow_val valve2 f1) (flow_val valve2 f2)  (flow_val valve2 f3) (flow_val valve2 f4)
-  (flow_val valve3 f1) (flow_val valve3 f2)  (flow_val valve3 f3) (flow_val valve3 f4)
-  (flow_val valve4 f1) (flow_val valve4 f2)  (flow_val valve4 f3) (flow_val valve4 f4)
-)
-
-(:knowledge-updates
-
-  (oneof (and (flow_val valve1 f1) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
-         (and (not (flow_val valve1 f1)) (flow_val valve1 f2) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
-         (and (not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (flow_val valve1 f3) (not (flow_val valve1 f4)) )
-         (and (not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (flow_val valve1 f4) )
-         (and (not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) (valve_regulated wp15))
-  )
-  (oneof   (and (flow_val valve2 f1) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
-           (and (not (flow_val valve2 f1)) (flow_val valve2 f2) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
-           (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (flow_val valve2 f3) (not (flow_val valve2 f4)) )
-           (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (flow_val valve2 f4) )
-           (and ((not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) (valve_regulated wp18))
-  )
-  (oneof   (and (flow_val valve3 f1) (not (flow_val valve3 f2)) (not (flow_val valve3 f3)) (not (flow_val valve3 f4)) )
-           (and (not (flow_val valve3 f1)) (flow_val valve3 f2) (not (flow_val valve3 f3)) (not (flow_val valve3 f4)) )
-           (and (not (flow_val valve3 f1)) (not (flow_val valve3 f2)) (flow_val valve3 f3) (not (flow_val valve3 f4)) )
-           (and (not (flow_val valve3 f1)) (not (flow_val valve3 f2)) (not (flow_val valve3 f3)) (flow_val valve3 f4) )
-           (and (not (flow_val valve3 f1)) (not (flow_val valve3 f2)) (not (flow_val valve3 f3)) (not (flow_val valve3 f4)) (valve_regulated wp38))
-  )
-  (oneof   (and (flow_val valve4 f1) (not (flow_val valve4 f2)) (not (flow_val valve4 f3)) (not (flow_val valve4 f4)) )
-           (and (not (flow_val valve4 f1)) (flow_val valve4 f2) (not (flow_val valve4 f3)) (not (flow_val valve4 f4)) )
-           (and (not (flow_val valve4 f1)) (not (flow_val valve4 f2)) (flow_val valve4 f3) (not (flow_val valve4 f4)) )
-           (and (not (flow_val valve4 f1)) (not (flow_val valve4 f2)) (not (flow_val valve4 f3)) (flow_val valve4 f4) )
-           (and (not (flow_val valve4 f1)) (not (flow_val valve4 f2)) (not (flow_val valve4 f3)) (not (flow_val valve4 f4)) (valve_regulated wp42))
-  )
 
 )
 

@@ -1,4 +1,4 @@
-(define (problem task)
+(define (problem vm_02)
 (:domain valve manipulation)
 (:objects
     auv0 - robot
@@ -2232,27 +2232,7 @@
 
     (= (total_distance) 0)
 
-
 )
-
-(:unknown-prop
-
-   (state_on v1)
-   (state_on v2)
-   (state_on v3)
-   (state_on v4)
-   (state_on v5)
-)
-
-(:knowledge-updates
-
-    (oneof (state_on v1) (and (not (state_on v1)) (valve_closed wp32)) )
-    (oneof (state_on v2) (and (not (state_on v2))  (valve_closed wp34)) )
-    (oneof (state_on v3) (and (not (state_on v3))  (valve_closed wp35)) )
-    (oneof (state_on v4) (and (not (state_on v4))  (valve_closed wp42)) )
-    (oneof (state_on v5) (and (not (state_on v5))  (valve_closed wp45)) )
-)
-
 (:goal (and
        (valve_closed wp32)
        (valve_closed wp34)

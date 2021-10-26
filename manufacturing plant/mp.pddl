@@ -86,15 +86,8 @@
   :effect (and  (at start (not (available ?r)))
                 (at end (available ?r))
                 (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
-                (at end (K+ (flow_val ?v f1)))
-                (at end (K+ (flow_val ?v f2)))
-                (at end (K+ (flow_val ?v f3)))
-                (at end (K+ (flow_val ?v f4)))
-                (at end (K+ (flow_val ?v f5)))
-                (at end (K+ (flow_val ?v f6)))
-                (at end (K+ (flow_val ?v f7)))
-                (at end (K+ (flow_val ?v f8)))
           )
+  :observe (flow_val ?v ?f)
 )
 
 (:durative-action position-arm

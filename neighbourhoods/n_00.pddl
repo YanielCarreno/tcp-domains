@@ -1,4 +1,4 @@
-(define (problem task)
+(define (problem n_00)
 (:domain neighbourhoods)
 (:objects
 
@@ -283,19 +283,6 @@
         (door_open house18loc0)
         (door_open house19loc0)
 )
-
-(:unknown-prop
-
-   (door_closed house0loc0)
-   (door_closed house1loc0)
-
-)
-(:knowledge-updates
-
-  (oneof (door_closed house0loc0) (and (not (door_closed house0loc0)) (door_open house0loc0)) )
-  (oneof (door_closed house1loc0) (and (not (door_closed house1loc0))  (door_open house1loc0)) )
-)
-
 
 (:goal
        (and (parcel_delivered postman0 house0loc1)

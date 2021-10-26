@@ -63,10 +63,10 @@
   :effect (and
           (at start (not (available ?r)))
           (at end   (available ?r))
+          (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           (at end   (K+ (low_visibility ?st)))
           (at end   (K+ (strong_current ?st)))
           (at end   (K+ (structure_located ?st)))
-          (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
 )
 
@@ -122,8 +122,8 @@
   :effect (and
           (at start (not (available ?r)))
           (at end   (available ?r))
-          (at end   (K+ (state_on ?v)))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
+          (at end   (K+ (state_on ?v)))
           )
 )
 

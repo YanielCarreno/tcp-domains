@@ -97,9 +97,9 @@
              )
   :effect (and (at start (not (available ?r)))
           (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
-          (at end (K+ (state_on ?v)))
           (at end (available ?r))
           )
+  :observe (and (state_on ?v))
 )
 
 (:durative-action close-bop

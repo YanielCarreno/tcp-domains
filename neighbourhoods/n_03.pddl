@@ -1,4 +1,4 @@
-(define (problem task)
+(define (problem n_03)
 (:domain neighbourhoods)
 (:objects
 
@@ -274,38 +274,6 @@
         (door_open house18loc0)
         (door_open house19loc0)
 )
-
-(:unknown-prop
-
-   (door_closed house0loc0)
-   (door_closed house1loc0)
-   (door_closed house2loc0)
-   (door_closed house3loc0)
-   (door_closed house4loc0)
-   (door_closed house5loc0)
-   (door_closed house6loc0)
-   (door_closed house7loc0)
-   (door_closed house8loc0)
-   (door_closed house9loc0)
-   (door_closed house10loc0)
-
-)
-(:knowledge-updates
-
-  (oneof (door_closed house0loc0) (and (not (door_closed house0loc0))  (door_open house0loc0)) )
-  (oneof (door_closed house1loc0) (and (not (door_closed house1loc0))  (door_open house1loc0)) )
-  (oneof (door_closed house2loc0) (and (not (door_closed house2loc0))  (door_open house2loc0)) )
-  (oneof (door_closed house3loc0) (and (not (door_closed house3loc0))  (door_open house3loc0)) )
-  (oneof (door_closed house4loc0) (and (not (door_closed house4loc0))  (door_open house4loc0)) )
-  (oneof (door_closed house5loc0) (and (not (door_closed house5loc0))  (door_open house5loc0)) )
-  (oneof (door_closed house6loc0) (and (not (door_closed house6loc0))  (door_open house6loc0)) )
-  (oneof (door_closed house7loc0) (and (not (door_closed house7loc0))  (door_open house7loc0)) )
-  (oneof (door_closed house8loc0) (and (not (door_closed house8loc0))  (door_open house8loc0)) )
-  (oneof (door_closed house9loc0) (and (not (door_closed house9loc0))  (door_open house9loc0)) )
-  (oneof (door_closed house10loc0) (and (not (door_closed house10loc0)) (door_open house10loc0)) )
-
-)
-
 
 (:goal
        (and (parcel_delivered postman0 house0loc1)

@@ -1,4 +1,4 @@
-(define (problem task)
+(define (problem vm_03)
 (:domain valve manipulation)
 (:objects
     auv0 - robot
@@ -2226,48 +2226,6 @@
     (= (distance wp85 wp85) 0)
 
     (= (total_distance) 0)
-
-
-)
-
-(:unknown-prop
-
-    (state_on v1)
-    (state_on v2)
-    (state_on v3)
-    (state_on v4)
-    (state_on v5)
-    (state_on v6)
-    (state_on v1)
-    (state_on v2)
-    (state_on v3)
-
-   (state_on v10)
-   (state_on v11)
-   (state_on v12)
-   (state_on v13)
-   (state_on v14)
-   (state_on v15)
-   (state_on v16)
-   (state_on v17)
-   (state_on v18)
-   (state_on v19)
-   (state_on v20)
-)
-
-(:knowledge-updates
-
-    (oneof (state_on v1) (and (not (state_on v1)) (valve_closed wp32)) )
-    (oneof (state_on v2) (and (not (state_on v2)) (valve_closed wp34)) )
-    (oneof (state_on v3) (and (not (state_on v3)) (valve_closed wp35)) )
-    (oneof (state_on v4) (and (not (state_on v4)) (valve_closed wp42)) )
-    (oneof (state_on v5) (and (not (state_on v5)) (valve_closed wp45)) )
-    (oneof (state_on v6) (and (not (state_on v6)) (valve_closed wp51)) )
-    (oneof (state_on v7) (and (not (state_on v7)) (valve_closed wp52)) )
-    (oneof (state_on v8) (and (not (state_on v8)) (valve_closed wp54)) )
-    (oneof (state_on v9) (and (not (state_on v9)) (valve_closed wp62)) )
-
-    (v10 (state_on v1) ((not(state_on v10)) => (valve_closed wp63)) )
 )
 
 (:goal (and

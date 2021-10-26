@@ -46,8 +46,8 @@
   :effect (and
           (at start (not (available ?r)))
           (at end (available ?r))
-          (at end (K+ (path_free ?wpi ?p)))
           )
+  :observe (and (path_free ?wpi ?p))
 )
 
 (:durative-action locate-camera

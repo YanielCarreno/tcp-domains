@@ -1,4 +1,4 @@
-(define (problem bc3)
+(define (problem bc10)
 (:domain biofouling_cleaning)
 (:objects
     auv0 - robot
@@ -106,7 +106,7 @@
 
     (= (speed auv0) 0.5)
     (= (recharge_rate auv0) 30)
-    (= (energy auv0) 90)
+    (= (energy auv0) 70)
     (= (consumption auv0) 0.01)
 
     (= (distance wp0 wp0) 0)
@@ -951,7 +951,6 @@
     (= (distance wp60 wp55) 151.529)
     (= (distance wp60 wp60) 0)
 
-
     (= (total_distance) 0)
 
 )
@@ -959,8 +958,18 @@
     (valve_closed v1)
     (valve_closed v2)
     (valve_closed v3)
-    (bla_cleaned t1)
-    (bla_cleaned t2)
+    (valve_closed v4)
+    (valve_closed v5)
+    (valve_closed v6)
+    (valve_closed v7)
+    (valve_closed v8)
+    (valve_closed v9)
+    (valve_closed v10)
+    (bla_cleaned t6)
+    (bla_cleaned t7)
+    (bla_cleaned t8)
+    (bla_cleaned t9)
+    (bla_cleaned t10)
     (recovered auv0 wp10)
 ))
 (:metric minimize (total-time))
