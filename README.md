@@ -57,5 +57,6 @@ DOMAIN DESCRIPTIONS:
   <p align="center"> <img src="/actual_figures/system.png" align="center" width="400" height="230"> </p>
 
   Observations:
-
-      Domians (biofouling cleaning ext. and underwater structure ext.) model the same problem than 6.1 and 6.2 with some changes in the problem modelling ( action's definition and incomplete knowledge definition)
+  <p align="justify">
+  Domians (biofouling cleaning ext. and underwater structure ext.) model the same problem than 6.1 and 6.2 with some changes in the problem modelling ( action's definition and incomplete knowledge definition)
+  </p>
