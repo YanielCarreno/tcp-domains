@@ -25,7 +25,7 @@
              (and (not (flow_val valve2 f1)) (flow_val valve2 f2) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) )
              (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (flow_val valve2 f3) (not (flow_val valve2 f4)) )
              (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (flow_val valve2 f4) )
-             (and ((not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) (valve_regulated wp18)))
+             (and (not (flow_val valve2 f1)) (not (flow_val valve2 f2)) (not (flow_val valve2 f3)) (not (flow_val valve2 f4)) (valve_regulated wp18) )
     )
     (oneof   (and (flow_val valve3 f1) (not (flow_val valve3 f2)) (not (flow_val valve3 f3)) (not (flow_val valve3 f4)) )
              (and (not (flow_val valve3 f1)) (flow_val valve3 f2) (not (flow_val valve3 f3)) (not (flow_val valve3 f4)) )
