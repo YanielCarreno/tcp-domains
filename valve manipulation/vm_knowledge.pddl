@@ -27,7 +27,7 @@
   )
 
   (:knowledge-updates
-  (and
+
       (oneof (state_on v1) (and (not (state_on v1))  (valve_closed wp32)) )
       (oneof (state_on v2) (and (not (state_on v2))  (valve_closed wp34)) )
       (oneof (state_on v3) (and (not (state_on v3))  (valve_closed wp35)) )
@@ -49,7 +49,6 @@
       (oneof (state_on v18) (and (not (state_on v18))  (valve_closed wp83)) )
       (oneof (state_on v19) (and (not (state_on v19))  (valve_closed wp84)) )
       (oneof (state_on v20) (and (not (state_on v20))  (valve_closed wp85)) )
-  )
   )
 
 )

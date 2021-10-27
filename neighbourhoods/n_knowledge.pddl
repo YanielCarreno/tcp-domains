@@ -27,7 +27,7 @@
   )
 
   (:knowledge-updates
-    (and
+
     (oneof (door_closed house0loc0) (and (not (door_closed house0loc0))  (door_open house0loc0)) )
     (oneof (door_closed house1loc0) (and (not (door_closed house1loc0))  (door_open house1loc0)) )
     (oneof (door_closed house2loc0) (and (not (door_closed house2loc0))  (door_open house2loc0)) )
@@ -49,6 +49,5 @@
     (oneof (door_closed house18loc0) (and (not (door_closed house18loc0)) (door_open house18loc0)) )
     (oneof (door_closed house19loc0) (and (not (door_closed house19loc0)) (door_open house19loc0)) )
 
-    )
   )
 )

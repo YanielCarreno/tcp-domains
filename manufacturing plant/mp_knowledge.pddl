@@ -14,7 +14,7 @@
      (flow_val valve10 f1) (flow_val valve10 f2)  (flow_val valve10 f3) (flow_val valve10 f4)
   )
   (:knowledge-updates
-    (and
+
     (oneof (and (flow_val valve1 f1) (not (flow_val valve1 f2)) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
            (and (not (flow_val valve1 f1)) (flow_val valve1 f2) (not (flow_val valve1 f3)) (not (flow_val valve1 f4)) )
            (and (not (flow_val valve1 f1)) (not (flow_val valve1 f2)) (flow_val valve1 f3) (not (flow_val valve1 f4)) )
@@ -75,7 +75,6 @@
              (and (not (flow_val valve10 f1)) (not (flow_val valve10 f2)) (flow_val valve10 f3) (not (flow_val valve10 f4)) )
              (and (not (flow_val valve10 f1)) (not (flow_val valve10 f2)) (not (flow_val valve10 f3)) (flow_val valve10 f4) )
              (and (not (flow_val valve10 f1)) (not (flow_val valve10 f2)) (not (flow_val valve10 f3)) (not (flow_val valve10 f4)) (valve_regulated wp44))
-    )
     )
   )
 

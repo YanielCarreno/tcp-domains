@@ -25,7 +25,7 @@
      (bla_obstructed t10)
   )
   (:knowledge-updates
-    (and
+
       (oneof (state_on v1) (and (not (state_on v1))  (valve_closed v1)) )
       (oneof (state_on v2) (and (not (state_on v2))  (valve_closed v2)) )
       (oneof (state_on v3) (and (not (state_on v3))  (valve_closed v3)) )
@@ -49,7 +49,6 @@
       (oneof (bla_obstructed t9) (and (not (bla_obstructed t9))  (bla_cleaned t9)) )
       (oneof (bla_obstructed t10) (and (not (bla_obstructed t10))  (bla_cleaned t10)) )
 
-    )
   )
 
 )

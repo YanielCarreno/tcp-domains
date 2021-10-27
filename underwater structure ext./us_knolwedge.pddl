@@ -36,7 +36,7 @@
       (low_visibility st10)
   )
   (:knowledge-updates
-      (and
+
       (oneof (and (structure_located st1) (not (low_visibility st1)) (not (strong_current st1)))
              (and (not (structure_located st1)) (low_visibility st1) (not (strong_current st1)))
              (and (not (structure_located st1)) (not (low_visibility st1)) (strong_current st1))
@@ -87,6 +87,5 @@
       (oneof (state_on v8) (and (not (state_on v8))  (valve_closed v8)) )
       (oneof (state_on v9) (and (not (state_on v9))  (valve_closed v9)) )
       (oneof (state_on v10) (and (not (state_on v10))  (valve_closed v10)) )
-      )
     )
 )

@@ -17,7 +17,7 @@
 
   )
   (:knowledge-updates
-    (and
+
     (oneof (path_free wpGF-1 pathGF-1-GF-0) (not (path_free wpGF-1 pathGF-1-GF-0)) )
     (oneof (path_free wpGF-1 pathGF-1-GF-2) (not (path_free wpGF-1 pathGF-1-GF-2)) )
     (oneof (path_free wpGF-2 pathGF-2-GF-1) (not (path_free wpGF-2 pathGF-2-GF-1)) )
@@ -31,6 +31,5 @@
     (oneof (path_free wpGF-15 pathGF-15-GF-2) (not (path_free wpGF-15 pathGF-15-GF-2)) )
     (oneof (path_free wpGF-15 pathGF-15-GF-4) (not (path_free wpGF-15 pathGF-15-GF-4)) )
 
-    )
   )
 )
