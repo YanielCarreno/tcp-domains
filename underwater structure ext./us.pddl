@@ -65,9 +65,9 @@
           (at end   (available ?r))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
-  :observe (and (low_visibility ?st)
-                (strong_current ?st)
-                (structure_located ?st)
+  :observe (and (at end (low_visibility ?st))
+                (at end (strong_current ?st))
+                (at end (structure_located ?st))
                 )
 )
 
@@ -125,7 +125,7 @@
           (at end   (available ?r))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
-  :observe (and (state_on ?v))
+  :observe (and (at end (state_on ?v)))
 )
 
 (:durative-action close-valve
