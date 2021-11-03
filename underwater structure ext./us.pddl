@@ -65,10 +65,11 @@
           (at end   (available ?r))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
-  :observe (and (at end (low_visibility ?st))
-                (at end (strong_current ?st))
-                (at end (structure_located ?st))
-                )
+  :observe (and 
+           (at end (low_visibility ?st))
+           (at end (strong_current ?st))
+           (at end (structure_located ?st))
+           )
 )
 
 
