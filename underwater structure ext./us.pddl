@@ -183,7 +183,7 @@
         (at end   (available ?r))
         (at end   (assign (data_adquired ?r) 0))
         (at end   (decrease (energy ?r) (* (energy ?r) 0.05)))
-	      )
+	)
 )
 
 (:durative-action recharge-battery
