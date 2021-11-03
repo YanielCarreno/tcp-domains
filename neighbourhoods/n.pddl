@@ -74,7 +74,7 @@
     :effect (and (at start (not (available ?r)))
             (at end (available ?r))
             )
-    :observe (and (door_closed ?y))
+    :observe (and (at end (door_closed ?y)))
 )
 
 (:durative-action open-door
