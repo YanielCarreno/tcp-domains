@@ -18,7 +18,7 @@ DOMAIN DESCRIPTIONS:
   The domain presents a manufacturing plant scenario where a Husky robot with electrical manipulators and stereo cameras control multiple variables in an industrial boiler. The Husky locates the valve's panel and modifies the valve's handle depending on the mission requirements. The  domain considers the handle has a number of fixed positions associated with a set of  flows ( FLOW-1, FLOW-2, ..., FLOW-N). The Husky has to inspect the valve and identifies the position of the handle in the control panel. The sensing action output will determine the regulation the robot needs to apply to set the flow to the desired value.  The robot also needs to position the robot arm in the right location to implement the manipulation at the same time the sensing action occurs. This domain requires temporal reasoning to implement concurrent actions.   
   </p>
 
-  <p align="center"> <img src="/actual_figures/mp.png" align="center" width="600" height="230"> </p>
+  <p align="center"> <img src="/actual_figures/mp.png" align="center" width="650" height="230"> </p>
 
   (3) Valve Manipulation:
 
