@@ -99,7 +99,7 @@
           (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
           (at end (available ?r))
           )
-  :observe (and (state_on ?v))
+  :observe (and (at end (state_on ?v)))
 )
 
 (:durative-action close-bop
@@ -120,7 +120,7 @@
         (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
         (at end (available ?r))
         (at end (valve_closed ?wp))
-  )
+        )
 )
 
 (:durative-action broadcast-data
@@ -137,7 +137,7 @@
         (at end (decrease (energy ?r) (* ?duration (consumption ?r))))
         (at end (available ?r))
         (at end (assign (data_acquired ?r) 0))
-	      )
+	)
 )
 
 (:durative-action refuel
