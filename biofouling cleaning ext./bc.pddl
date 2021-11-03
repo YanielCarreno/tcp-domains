@@ -65,7 +65,7 @@
           (at end   (available ?r))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
-  :observe (and (state_on ?v))
+  :observe (and (at end (state_on ?v)))
 )
 
 (:durative-action inspect-area
@@ -83,7 +83,7 @@
           (at end   (available ?r))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.1)))
           )
-  :observe (and (bla_obstructed ?t))
+  :observe (and (at end (bla_obstructed ?t)))
 )
 
 (:durative-action close-valve
