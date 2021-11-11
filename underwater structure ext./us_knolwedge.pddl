@@ -12,6 +12,17 @@
       (sensor_damaged v8)
       (sensor_damaged v9)
       (sensor_damaged v10)
+      
+      (sensor_located st1)
+      (sensor_located st2)
+      (sensor_located st3)
+      (sensor_located st4)
+      (sensor_located st5)
+      (sensor_located st6)
+      (sensor_located st7)
+      (sensor_located st8)
+      (sensor_located st9)
+      (sensor_located st10)
 
       (strong_current st1)
       (strong_current st2)
