@@ -287,9 +287,9 @@
 
 )
 (:goal (and
-    (sensor_damaged v8)
-    (sensor_damaged v9)
-    (sensor_damaged v10)
+    (sensor_replaced v8)
+    (sensor_replaced v9)
+    (sensor_replaced v10)
     (recovered auv0 wp10)
 ))
 (:metric minimize (total-time))
