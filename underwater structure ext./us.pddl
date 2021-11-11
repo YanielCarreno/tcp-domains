@@ -36,7 +36,6 @@
 
              (low_visibility ?p - poi)
              (strong_current ?p - poi)
-             (struture_located ?p - poi)
 	     (sensor_located ?p - poi)
 )
 
@@ -139,7 +138,7 @@
             (over all (is_sensor ?v))
             (over all (robot_at ?r ?wp))
             (at start (sensor_damaged ?v))
-            (at start (structure_located ?st))
+            (at start (sensor_located ?st))
             (at start (available ?r))
             )
  :effect (and
