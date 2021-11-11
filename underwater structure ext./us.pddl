@@ -15,23 +15,23 @@
              (manipulator_equipped ?r - robot ?a - robot_actuator)
              (cleaner_equipped ?r - robot ?a - robot_actuator)
 
-             (valve_closed       ?p - poi)
-             (bla_cleaned        ?p - poi)
+             (sensor_replaced      ?p - poi)
+             (bla_cleaned          ?p - poi)
 
              (explored           ?wp - waypoint)
              (recharged          ?r - robot)
              (recovered          ?r - robot  ?wp - waypoint)
 
-             (valve_at           ?p - poi  ?wp - waypoint)
+             (sensor_at          ?p - poi  ?wp - waypoint)
              (structure_at       ?p - poi  ?wp - waypoint)
 
              (docking_point      ?r - robot  ?wp - waypoint)
 
              (refuel_deliverable ?r - robot  ?wp - waypoint)
 
-             (state_on ?p - poi)
+             (sensor_damaged ?p - poi)
 
-             (is_valve ?p - poi)
+             (is_sensor ?p - poi)
              (is_structure ?p - poi)
 
              (low_visibility ?p - poi)
@@ -109,13 +109,13 @@
          )
 )
 
-(:durative-action sense-valve
+(:durative-action sense-sensor
  :parameters (?r - robot ?s - robot_sensor ?v ?st - poi ?wp - waypoint)
  :duration ( = ?duration 5)
  :condition (and
              (over all (robot_at ?r ?wp))
-             (over all (valve_at ?v  ?wp))
-             (over all (is_valve ?v))
+             (over all (sensor_at ?v  ?wp))
+             (over all (is_sensor ?v))
              (over all (camera_equipped ?r ?s))
              (at start (structure_located ?st))
              (at start (< (data_adquired ?r) (data_capacity ?r)))
@@ -126,26 +126,26 @@
           (at end   (available ?r))
           (at end   (decrease (energy ?r) (* (energy ?r) 0.01)))
           )
-  :observe (and (at end (state_on ?v)))
+  :observe (and (at end (sensor_damaged ?v)))
 )
 
-(:durative-action close-valve
+(:durative-action replace-sensor
  :parameters (?r - robot  ?a - robot_actuator ?v ?st - poi ?wp - waypoint)
  :duration (= ?duration 15)
  :condition (and
-            (over all (valve_at ?v  ?wp))
+            (over all (sensor_at ?v  ?wp))
             (over all (manipulator_equipped ?r  ?a))
-            (over all (is_valve ?v))
+            (over all (is_sensor ?v))
             (over all (robot_at ?r ?wp))
-            (at start (state_on ?v))
+            (at start (sensor_damaged ?v))
             (at start (structure_located ?st))
             (at start (available ?r))
             )
  :effect (and
          (at start (not (available ?r)))
          (at end   (available ?r))
-         (at end   (not (state_on ?v)))
-         (at end   (valve_closed ?v))
+         (at end   (not (sensor_damaged ?v)))
+         (at end   (sensor_replaced ?v))
          (at end   (decrease (energy ?r) (* (energy ?r) 0.05)))
          )
 )
