@@ -36,7 +36,8 @@
 
              (low_visibility ?p - poi)
              (strong_current ?p - poi)
-             (structure_located ?p - poi)
+             (struture_located ?p - poi)
+	     (sensor_located ?p - poi)
 )
 
 (:functions (consumption ?r - robot)
@@ -68,7 +69,7 @@
   :observe (and 
            (at end (low_visibility ?st))
            (at end (strong_current ?st))
-           (at end (structure_located ?st))
+           (at end (sensor_located ?st))
            )
 )
 
@@ -86,7 +87,7 @@
  :effect (and
          (at start (not (available ?r)))
          (at end   (available ?r))
-         (at end   (structure_located ?st))
+         (at end   (sensor_located ?st))
          (at end   (decrease (energy ?r) (* (energy ?r) 0.05)))
          )
 )
@@ -104,7 +105,7 @@
  :effect (and
          (at start (not (available ?r)))
          (at end   (available ?r))
-         (at end   (structure_located ?st))
+         (at end   (sensor_located ?st))
          (at end   (decrease (energy ?r) (* (energy ?r) 0.1)))
          )
 )
@@ -117,7 +118,7 @@
              (over all (sensor_at ?v  ?wp))
              (over all (is_sensor ?v))
              (over all (camera_equipped ?r ?s))
-             (at start (structure_located ?st))
+             (at start (sensor_located ?st))
              (at start (< (data_adquired ?r) (data_capacity ?r)))
              (at start (available ?r))
              )
