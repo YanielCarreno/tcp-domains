@@ -8,9 +8,9 @@
      (state_on v4)
      (state_on v5)
      (state_on v6)
-     (state_on v1)
-     (state_on v2)
-     (state_on v3)
+     (state_on v7)
+     (state_on v8)
+     (state_on v9)
 
      (state_on v10)
      (state_on v11)
